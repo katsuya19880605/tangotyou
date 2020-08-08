@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>CSV編集</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/edit.css" />
+
+    <script src="javascripts/jquery.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container bg-secondary">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+                <a class="navbar-brand" href="#">単語テスト</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <!-- 追加 -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="personal">Top</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/NewFile">NewFile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/edit">Edit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <p><%= msg %></p>
+    
+<div class="tab-group">
+        <button type="button" class="tab is-active"><i class="fas fa-file-signature"></i> Edit data</a>
+        <button type="button" class="tab"><i class="fas fa-cloud-upload-alt"></i> UPload file</a>
+</div>
+    
+
+
+<!--タブを切り替えて表示するコンテンツ-->
+<div class="panel-group">
+
+    <!----------------------------------------------------------->
+    <!------------------ コンテンツA ---------------------------->
+	<div class="panel is-show">
+
+        <!-- 一致するファイル名を表示 -->
+            <select id="sources" class="custom-select sources" placeholder="Edit">
+                <% for(let i in file){ %>
+                    <option value="<%= file[i]%>"><%= file[i]%></option>
+                <%}%>
+            </select>
+
+            <!-- <button id="read" type="button" onclick="getCSV()">ファイルを読込む</button> -->
+
+            <!-- 保存ボタンが押されたvalueに編集データが入りPOSTする -->
+                <button id="save" onclick="saveCsv();">保存する</button>
+                <form method="POST" name="post">
+                    <input id="name" type="hidden" name="name" value="">
+                    <input id="data" type="hidden" name="data" value="">
+                </form>
+
+                <!-- テーブル表示：convertCSVtoArray()でタグの中にテーブル要素が入る -->
+                <div class="table_box">
+                    <table id="T_lavel" >
+                        <tr>
+                            <th class="a">略 語</th>
+                            <th class="b">フルスペル</th>
+                            <th class="c">カタカナ</th>
+                            <th class="d">意 味</th>
+                            <th class="e">フラグ</th>
+                    </tr>
+                    </table>
+                    <table id="T_data" ></table>
+                    <div class="newrow">
+                        <button id="row" onclick="newRow();">スペースを追加</button> 
+                    </div>
+                </div>
+
+
+    </div>
+
+    <!----------------------------------------------------------->
+    <!------------------ コンテンツB ---------------------------->
+
+	<div class="panel">
+
+
+        <!-- ファイル選択 -->
+        <div id="input-group">
+            <input type="file" id="file" accept="text/csv">
+            <label for="file" id="input-label">UPload</label>
+        </div>
+    
+        <!-- 保存ボタンが押された際に、saveCsv()の処理で
+                valueに編集データが入りdelete.jsにPOSTする -->
+        <button id="UPdata"  onclick="upCsv();">GO</button>
+        <span id="type-error"></span>
+
+             
+    </div>
+</div>
+  
+    <div class="b_point">
+        <p><a href="personal">Back</a></p>
+    </div>
+ 
+ 
+    
+
+    
+
+
+
+
+</body>
+
+
+
+
+<script>
+
+    'use strict';
+    //初期表示は非表示
+    document.getElementById("save").style.display = "none";
+    document.getElementById("T_lavel").style.display = "none";
+    document.getElementById("row").style.display = "none";
+    document.getElementById("UPdata").style.display = "none";
+    // document.getElementById("read").style.display = "none";
+
+
+//jQuery
+//input file
+    $(function(){
+  $("input[type='file']").on('change',function(){
+     var file = $(this).prop('files')[0];
+     if(!($(".filename").length)){
+       $("#input-group").append('<span class="filename"></span>');
+     }
+     $("#input-label").addClass('changed');
+     $(".filename").html(file.name);
+   });
+ });
+
+
+
+
+//セレクトボックス
+
+ $(".custom-select").each(function() {
+  var classes = $(this).attr("class"),
+      id      = $(this).attr("id"),
+      name    = $(this).attr("name");
+  var template =  '<div class="' + classes + '">';
+      template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+      template += '<div class="custom-options">';
+      $(this).find("option").each(function() {
+        template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+      });
+  template += '</div></div>';
+  
+  $(this).wrap('<div class="custom-select-wrapper"></div>');
+  $(this).hide();
+  $(this).after(template);
+});
+$(".custom-option:first-of-type").hover(function() {
+  $(this).parents(".custom-options").addClass("option-hover");
+}, function() {
+  $(this).parents(".custom-options").removeClass("option-hover");
+});
+$(".custom-select-trigger").on("click", function() {
+  $('html').one('click',function() {
+    $(".custom-select").removeClass("opened");
+  });
+  $(this).parents(".custom-select").toggleClass("opened");
+  event.stopPropagation();
+});
+$(".custom-option").on("click", function() {
+  $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+  $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+  $(this).addClass("selection");
+  $(this).parents(".custom-select").removeClass("opened");
+  $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+//   $("#read").css('display', '');  //追加 ファイルを読み込みボタン表示
+  getCSV();//読み込み関数呼び出し
+
+});
+
+
+//タブの切替
+jQuery(function($){
+	$('.tab').click(function(){
+		$('.is-active').removeClass('is-active');
+		$(this).addClass('is-active');
+		$('.is-show').removeClass('is-show');
+        // クリックしたタブからインデックス番号を取得
+		const index = $(this).index();
+        // クリックしたタブと同じインデックス番号をもつコンテンツを表示
+		$('.panel').eq(index).addClass('is-show');
+	});
+});
+
+
+
+    //*****************************************************************
+    // 宣言エリア グローバルスコープ
+    //*****************************************************************
+    let array = [];
+    let newArray = [];
+    let tableArray = [];
+    let newCnt=-1;  
+    let fileReader = new FileReader();
+    var fileElement = document.getElementById("sources");
+    var fileElements = fileElement.options;
+    let UpCsvData="";
+    let fName="";
+
+
+
+
+    
+    //*****************************************************************
+    //CSVファイル読み込み
+    //*****************************************************************
+    function getCSV() {
+        
+        let csvFile = "";
+        //選択されているファイル名を取得
+        for (var i = 0; i < fileElements.length; i++) {
+            if (fileElements[i].selected) {
+                csvFile = fileElements[i].value
+            }
+        };
+        // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
+        let req = new XMLHttpRequest(); 
+        req.open("get","csv/" + csvFile, true); // アクセスするファイルを指定して開く   
+        req.send(null); // HTTPリクエストの発行
+        // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ	
+        req.onload = function () {
+            convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
+        }
+    }
+
+    //*****************************************************************
+    // convertCSVtoArray() 読み込んだCSVデータを二次元配列に変換する関数 
+    //*****************************************************************
+
+    //読み込んだCSVデータが文字列として渡される
+    function convertCSVtoArray(str) {
+        let tmp = str.split("\n");//改行で分割して配列にする
+       
+        array=[]; //初期化;
+        //配列の要素ごとにカンマ区切りで分割して要素の中で配列を作る(二次元配列)
+        for (let i = 0; i < tmp.length; ++i) {
+            array[i] = tmp[i].split(',');
+        }
+        
+        newArray=[];   newCnt=-1; //初期化;
+        //値がない行or最初の要素が無い行を消去する
+        for (let i = 0; i < array.length; ++i) {
+            if (array[i][0] !== "") {
+                newCnt++;
+                newArray[newCnt]=array[i];
+            }
+        }
+
+        tableArray = [];  //初期化
+        //テーブルタグを追加、行の最初に<tr>、最後に</tr>を加える contenteditable=true 編集可能
+        for (let i = 0; i < newArray.length; ++i) {
+            for (let j = 0; j < newArray[i].length; ++j) {
+                if (j == 0) {
+                    tableArray += '<tr><td contenteditable=true class="a">' + newArray[i][j] + '</td>';
+                } else if (j == 1) {
+                    tableArray += '<td contenteditable=true class="b">' + newArray[i][j] + '</td>';
+                } else if (j == 2) {
+                    tableArray += '<td contenteditable=true class="c">' + newArray[i][j] + '</td>';
+                } else if (j == 3) {
+                    tableArray += '<td contenteditable=true class="d">' + newArray[i][j] + '</td>';
+                } else {
+                    tableArray += '<td contenteditable=true class="e">' + newArray[i][j] + '</td></tr>';
+                }
+            }
+        }
+        //配列の中身をテーブルタグの中に入れる→テーブル表示
+        document.getElementById('T_data').innerHTML = tableArray; 
+        //「ラベル」「追加」が表示される 
+        document.getElementById("save").style.display = "";
+        document.getElementById("T_lavel").style.display = "";
+        document.getElementById("row").style.display = "";
+    }
+
+
+    
+    //*****************************************************************
+    // テーブルに新しい行を追加
+    //**************************************************************
+
+    function newRow() {
+        //表の値を取得
+        let table = document.getElementById('T_data');
+        //テーブルのテキスト要素に含まれるタグ文字を","に置き換える
+        let td_element = table.innerText.replace(/\t/g, ",");
+        //半角&を全角＆に置き換える 
+        let td_element2 = td_element.replace(/\&/g, "＆");
+
+        // 改行を区切り文字として行を要素とした配列を生成
+        let td_element3 = td_element2.split("\n");
+
+        let newArray = [];
+        // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
+        for (let i = 0; i < td_element3.length; ++i) {
+            newArray[i] = td_element3[i].split(',');
+        }
+
+        let newLow = [];
+        //配列の最初の行を新しい配列として複製する
+        newLow = newArray[0].concat();
+
+        //新しい配列の中身をカラにする
+        for (let i = 0; i < newLow.length; ++i) {
+            newLow[i] = "";
+        }
+
+        //要素数を取得、配列に新しい行として追加
+        let newLowCnt = newArray.length;
+        newArray[newLowCnt] = newLow;
+
+        tableArray = [];  //初期化
+        //テーブルタグを追加、行の最初に<tr>、最後に</tr>を加える contenteditable=true 編集可能
+        for (let i = 0; i < newArray.length; ++i) {
+            for (let j = 0; j < newArray[i].length; ++j) {
+                if (j == 0) {
+                    tableArray += '<tr><td contenteditable=true class="a">' + newArray[i][j] + '</td>';
+                } else if (j == 1) {
+                    tableArray += '<td contenteditable=true class="b">' + newArray[i][j] + '</td>';
+                } else if (j == 2) {
+                    tableArray += '<td contenteditable=true class="c">' + newArray[i][j] + '</td>';
+                } else if (j == 3) {
+                    tableArray += '<td contenteditable=true class="d">' + newArray[i][j] + '</td>';
+                } else {
+                    tableArray += '<td contenteditable=true class="e">' + newArray[i][j] + '</td></tr>';
+                }
+            }
+        }
+        //配列の中身をテーブルタグの中に入れる→テーブル表示
+        document.getElementById('T_data').innerHTML = tableArray;
+    }
+
+
+
+    //*****************************************************************
+    // テーブル編集後、保存
+    //**************************************************************
+
+    function saveCsv() {
+
+        //表の値を取得
+        let table = document.getElementById('T_data');
+        //テーブルのテキスト要素に含まれるタグ文字を","に置き換える
+        let td_element = table.innerText.replace(/\t/g, ",");
+        //半角&を全角＆に置き換える 
+        let td_element2 = td_element.replace(/\&/g, "＆");
+
+        // 改行を区切り文字として行を要素とした配列を生成
+        let td_element3 = td_element2.split("\n");
+
+        let td_element4 = [];
+        // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
+        for (let i = 0; i < td_element3.length; ++i) {
+            td_element4[i] = td_element3[i].split(',');
+        }
+
+        let newTd_element = []; let newCnt=-1; //初期化
+        //値がない行or最初の要素が無い行を消去する
+        for (let i = 0; i < td_element4.length; ++i) {
+            if (td_element4[i][0] !== "") {
+                newCnt++;
+                newTd_element[newCnt]=td_element4[i];
+            }
+        }
+
+        //ファイル名を取得
+        let fileName=document.getElementById("sources").value;
+
+        let NewTd = ''; //初期化
+        //配列に改行コードを追加して、文字列として連結する
+        NewTd = newTd_element.join('\n'); 
+
+        //inputタグのvalueに取得した表のデータとファイル名を入れる
+        document.getElementById("name").value = fileName;
+        document.getElementById("data").value = NewTd;
+        //フォームからデータを送る
+        document.post.submit();
+
+    }
+
+
+
+
+    //*****************************************************************
+    // アップロードファイルの読み込み 
+    //**************************************************************
+
+		//第1引数の「DOMの読み込み完了」した時に、処理を実行
+		window.addEventListener('DOMContentLoaded', function() {
+
+            //*****************ファイル名を取得************************//
+            // fileのHTML要素を取得して、変化があれば処理を実行するメソッド
+            document.querySelector("#file").addEventListener('change', function(e) {
+                // ブラウザーがFile APIを利用できるか確認
+                if (window.File) {
+                    // 指定したファイル名を取得して変数inputに入れる
+                    let input = document.querySelector('#file').files[0];
+                    // 変数inputのname要素をinputタグのvalueの中身に入れる
+                    document.querySelector('#name').value = input.name;
+                    //ファイル名をグローバル変数に入れる
+                    fName=input.name;
+                }
+            }, true);
+
+            //**************CSVファイルの中身を読み込む**********************//
+            //ファイル要素を取得
+            let fileInput = document.getElementById("file");
+            //FileReaderオブジェクトを生成する
+            let fileReader = new FileReader();
+            //ファイル要素を取得後の処理
+            fileInput.onchange = () => {
+                //選択したファイルの最初のファイルを取得
+                let file = fileInput.files[0];
+                //ファイルの読み込みを開始
+                fileReader.readAsText(file);
+            };
+
+            //ファイル情報取得後の処理
+            fileReader.onload = function () {
+                checkCSV(fileReader.result);
+            }
+        });
+
+
+
+
+    //*****************************************************************
+    //  読み込んだCSVデータの形式チェック
+    //*****************************************************************
+    function checkCSV(str) {
+        let UpErrs=[];//エラーメッセージが入る
+        let fType=".csv";
+
+        //ファイル名の最後から4文字を切り出す  fName=グローバルスコープ
+        let fNameBack = fName.substr(-4); 
+        // ファイル形式チェック 
+        if(fNameBack.match(fType) == null){
+            UpErrs+="CSV形式ファイル以外はアップロードできません。<br>";
+        }
+
+        //CSVデータを改行ごとに配列にする
+        let UpCsvElment = str.split("\n");
+        
+        let clumCnt=[]; let NGcnt=0;  //初期値
+        //配列の全要素にカンマ4つ含まれているいるかチェック
+        for (let i = 0; i < UpCsvElment.length; ++i) {
+            clumCnt[i] = (UpCsvElment[i].match(/,/g) || []).length;
+
+            if(clumCnt[i] != 4){  //配列要素にカンマが４つ含まれているか
+                NGcnt++; //カンマの数が4つでない行数
+            }
+        }
+        if(NGcnt != 0){  //エラーがあった時
+            UpErrs+="アップロードファイルは５列にしてください。<br>";
+        }
+        
+        //エラーの有無
+        if(UpErrs.length==0){ 
+            UpCsvData = str;  //データをグローバル変数に入れる
+
+            //アップデートボタン表示
+            document.getElementById("UPdata").style.display = "";  
+
+        }else{  //エラーの出力
+            //エラー内容を出力
+            document.getElementById('type-error').innerHTML = UpErrs;
+        }        
+    };
+
+       
+
+
+    //*****************************************************************
+    // アップロード処理
+    //**************************************************************
+
+    function upCsv() {
+        // //input fileからファイル名を取得
+        // fName = document.getElementById("file").value;
+        //inputタグのvalueに取得した表の配列とファイル名を入れる
+        document.getElementById("name").value = fName;
+        document.getElementById("data").value = UpCsvData;
+        //フォームからデータを送る
+        document.post.submit();
+    }
+
+
+
+
+</script>
+
+</html>
