@@ -1,0 +1,24 @@
+header {
+    background-color: deepskyblue;
+}
+
+.disparea {
+    text-align: center;
+    font-size: 60px;
+    padding: 60px 0px;
+}
+
+.dispareahight {
+    height: 280px;
+}
+
+.btn-color{
+    border-width: 3px;
+    color: deepskyblue;
+    border-color: deepskyblue;
+}
+.btn-color:hover{
+    color: #fff;
+    background-color: deepskyblue;
+    border-color: deepskyblue;
+}
