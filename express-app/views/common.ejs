@@ -56,13 +56,6 @@
             <div id="disparea" class="px-0 disparea dispareahight">
                 -START-
             </div>
-            <!-- <div class="card-body"> -->
-            <!-- 変更 -->
-            <!-- <h2 id="textdiv_1" class="text-center font-weight-bold">　</h2>
-                        <p class="border-bottom text-center"><span id="textdiv_2">　</span></p>
-                        <p class="border-bottom text-center"><span id="textdiv_3">　</span></p>
-                        <p class="border-bottom text-center"><span id="textdiv_4">　</span></p> -->
-            <!-- <p class="border-bottom text-center"><span id="textdiv_5">　</span></p> -->
         </div>
 
         <div class="row">
@@ -91,7 +84,7 @@
     let cnt = 0;
     let flg = 1;
     let quantity = 0;
-    let redirect_flg = false;
+    let reset_flg = false;
 
     let fileInput = document.getElementById("01");
     //let elements = document.getElementsByName("r");
@@ -218,6 +211,12 @@
         disparea.textContent = array[cnt][flg];
         disparea.classList.add('disparea');
         pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
+        disparea.classList.add('disparea');
+        start.classList.remove('btn-color2');
+        start.classList.add('btn-color');
+        start.innerHTML = 'NEXT';
+        reset_flg = false;
+        flg = 0;
     };
 
     //*****************************************************************
@@ -225,45 +224,35 @@
     //*****************************************************************
     function changeText() {
         disparea.classList.remove('disparea');
-        // for (var i = elements.length; i--;) {
-        //     if (elements[i].checked) {
-        //         switch (elements[i].value) {
-        //             case "0":
-        //                 quantity = 10;
-        //                 break;
-        //             case "1":
-        //                 quantity = 30;
-        //                 break;
-        //             case "2":
-        //                 quantity = array.length;
-        //                 break;
-        //         }
-        //     }
-        // }
 
-
-        // if ((flg == 1 && cnt == quantity) || (flg == 1 && cnt == array.length)) {
-        //     pDiv1.innerText = "終了です。";
-        //     pDiv2.innerHTML = '　';
-        //     pDiv3.innerHTML = '　';
-        //     pDiv4.innerHTML = '　';
-        //     start.innerHTML = 'END';
-        //     // pDiv5.innerHTML = '　';
-        //     return;
-        // }
-
-        /*終了時の処理*/
-        if (redirect_flg) {
-            document.restart.action = "/";
-            document.restart.method = "get";
-            document.restart.submit();
+        /*終了時の処理 問題が最後まで終わったら最初から繰り返す*/
+        if (reset_flg) {
+            let answer = confirm('You もう1回やっちゃいなよ ( ´⊿`)y-~~');
+            if(answer){
+                disparea.textContent = '-START-';
+                disabled_release.disabled = true;      //backボタンの無効化
+                disparea.classList.add('disparea');
+                shufle(array);
+                cnt = 0;    //ラジオボタン選択時にカウントを初期化する
+                start.classList.remove('btn-color2');
+                start.classList.add('btn-color');
+                pcnt.innerText = cnt + '問目／' + quantity + '問';
+                start.innerHTML = 'NEXT';
+                reset_flg = false;
+            }else{
+                disparea.classList.add('disparea');
+                reset_flg = true;
+            }
+            return;
         }
         if ((flg == 1 && cnt == quantity) || (flg == 1 && cnt == array.length)) {
             disparea.textContent = '-END-';
             disparea.classList.add('disparea');
+            start.classList.remove('btn-color');
+            start.classList.add('btn-color2');
             pcnt.innerText = cnt + '問目／' + quantity + '問';
             start.innerHTML = 'Re:START';
-            redirect_flg = true;
+            reset_flg = true;
             return;
         }
         /*終了時の処理　ここまで*/
@@ -286,17 +275,10 @@
             pDiv2.innerHTML = array[cnt][flg];
             pDiv3.innerHTML = array[cnt][flg + 1];
             pDiv4.innerHTML = array[cnt][flg + 2];
-            // pDiv5.innerHTML = array[cnt][flg + 3];
             cnt++;
         }
 
         disabled_release.disabled = false;      //backボタンの有効化
-
-        // console.log('問題数は ' + quantity);
-        // console.log('アレイレングスは' + array.length);
-        // console.log('カウントは ' + cnt);
-        // console.log('選択したのは ' + elements[1].value);
-        // console.log('startフラグ' + startFlag);
     };
 
     //*****************************************************************
