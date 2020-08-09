@@ -46,15 +46,13 @@
     </div>
     <p><%= msg %></p>
     
-<div class="tab-group">
-        <button type="button" class="tab is-active"><i class="fas fa-file-signature"></i> Edit data</a>
-        <button type="button" class="tab"><i class="fas fa-cloud-upload-alt"></i> UPload file</a>
-</div>
+
+
+
     
 
 
-<!--タブを切り替えて表示するコンテンツ-->
-<div class="panel-group">
+
 
     <!----------------------------------------------------------->
     <!------------------ コンテンツA ---------------------------->
@@ -67,60 +65,55 @@
                 <%}%>
             </select>
 
-            <!-- <button id="read" type="button" onclick="getCSV()">ファイルを読込む</button> -->
 
             <!-- 保存ボタンが押されたvalueに編集データが入りPOSTする -->
-                <button id="save" onclick="saveCsv();">保存する</button>
-                <form method="POST" name="post">
-                    <input id="name" type="hidden" name="name" value="">
-                    <input id="data" type="hidden" name="data" value="">
-                </form>
+            <button id="save" onclick="saveCsv();">保存する</button>
+            <form method="POST" name="post">
+                <input id="name" type="hidden" name="name" value="">
+                <input id="data" type="hidden" name="data" value="">
+            </form>
 
-                <!-- テーブル表示：convertCSVtoArray()でタグの中にテーブル要素が入る -->
-                <div class="table_box">
-                    <table id="T_lavel" >
-                        <tr>
-                            <th class="a">略 語</th>
-                            <th class="b">フルスペル</th>
-                            <th class="c">カタカナ</th>
-                            <th class="d">意 味</th>
-                            <th class="e">フラグ</th>
-                    </tr>
-                    </table>
-                    <table id="T_data" ></table>
-                    <div class="newrow">
-                        <button id="row" onclick="newRow();">スペースを追加</button> 
-                    </div>
+            <!-- テーブル表示：convertCSVtoArray()でタグの中にテーブル要素が入る -->
+            <div class="table_box">
+                <table id="T_lavel" >
+                    <tr>
+                        <th class="a">略 語</th>
+                        <th class="b">フルスペル</th>
+                        <th class="c">カタカナ</th>
+                        <th class="d">意 味</th>
+                        <th class="e">フラグ</th>
+                </tr>
+                </table>
+                <table id="T_data" ></table>
+                <div class="newrow">
+                    <button id="row" onclick="newRow();">スペースを追加</button> 
                 </div>
-
-
+            </div>
     </div>
 
     <!----------------------------------------------------------->
     <!------------------ コンテンツB ---------------------------->
 
-	<div class="panel">
 
 
-        <!-- ファイル選択 -->
-        <div id="input-group">
-            <input type="file" id="file" accept="text/csv">
-            <label for="file" id="input-label">UPload</label>
-        </div>
+<div claa="upicon">
     
-        <!-- 保存ボタンが押された際に、saveCsv()の処理で
-                valueに編集データが入りdelete.jsにPOSTする -->
-        <button id="UPdata"  onclick="upCsv();">GO</button>
-        <span id="type-error"></span>
-
-             
+    <!-- ファイル選択 -->
+    <div id="input-group">
+        <input type="file" id="file" accept="text/csv">
+        <label for="file" id="input-label">UPload</label>
     </div>
-</div>
-  
+
+    <!-- 保存ボタンが押された際に、saveCsv()の処理で
+            valueに編集データが入りdelete.jsにPOSTする -->
+    <button id="UPdata"  onclick="upCsv();">GO</button>
+    <span id="type-error"></span>
+
     <div class="b_point">
         <p><a href="personal">Back</a></p>
     </div>
- 
+</div>
+    
  
     
 
@@ -197,24 +190,11 @@ $(".custom-option").on("click", function() {
   $(this).addClass("selection");
   $(this).parents(".custom-select").removeClass("opened");
   $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
-//   $("#read").css('display', '');  //追加 ファイルを読み込みボタン表示
   getCSV();//読み込み関数呼び出し
 
 });
 
 
-//タブの切替
-jQuery(function($){
-	$('.tab').click(function(){
-		$('.is-active').removeClass('is-active');
-		$(this).addClass('is-active');
-		$('.is-show').removeClass('is-show');
-        // クリックしたタブからインデックス番号を取得
-		const index = $(this).index();
-        // クリックしたタブと同じインデックス番号をもつコンテンツを表示
-		$('.panel').eq(index).addClass('is-show');
-	});
-});
 
 
 
