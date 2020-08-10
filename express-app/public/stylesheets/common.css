@@ -22,14 +22,3 @@ header {
     background-color: deepskyblue;
     border-color: deepskyblue;
 }
-
-.btn-color2{
-    border-width: 3px;
-    color: dodgerblue;
-    border-color: dodgerblue;
-}
-.btn-color2:hover{
-    color: #fff;
-    background-color: dodgerblue;
-    border-color: dodgerblue;
-}

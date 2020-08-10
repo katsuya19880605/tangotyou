@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+ 
+<body>
+    <div class="main">  
+        <div class="warning">
+            <p ><%- message %></p>
+        </div>
+        <div class="login">
+            <h1>Login</h1>
+            <form method="post" action="/login">
+                    <input  type="email" id="mailadd" name="mailadd" placeholder="Your email">
+                    <input  type="password" id="password" name="password"
+                    placeholder="Password">
+                    <input id="submit" type="submit" value="Login">
+            </form>
+            <p><a href="/"  class="cp_link">Back</a></p>
+        </div>
+    </div>
+    
+
+</body>
+</html>

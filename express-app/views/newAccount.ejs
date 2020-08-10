@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+ 
+<body>
+    <div class="main">  
+        <div class="warning">
+            <p ><%- content %></p>
+
+            <% if(errorMessage) { %>
+                <ul>
+                    <% for (let n in errorMessage) { %>
+                    <li>
+                        <%= errorMessage[n].msg %>
+                    </li>
+                    <% } %>
+                </ul>
+            <% } %>
+
+
+        </div>
+        <div class="login">
+            <h1>Signup</h1>
+            <form method="post" action="/newAccount">
+                <input type="email"  name="email"
+                placeholder="Your email" value="<%= form.email %>" >
+                <input type="password"  name="password"
+                placeholder="Create a password" value="<%= form.password %>">
+                <input type="password"  name="password2"
+                placeholder="Create a password(check)" value="<%= form.password2 %>">
+                <input id="submit" type="submit" value="Sign up for Tangotest">
+            </form>
+            <p><a href="/" class="cp_link">Back</a></p>
+        </div>
+    </div>
+
+
+    
+
+</body>
+</html>
