@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html>
- 
+<html lang="ja">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Login</title>
 </head>
- 
+
 <body>
-    <div class="main">  
-        <div class="warning">
-            <p ><%- message %></p>
-        </div>
+    <div class="main">
         <div class="login">
             <h1>Login</h1>
+            <div class="warning">
+                <p class="message_deco"><%- message %></p>
+            </div>
             <form method="post" action="/login">
-                    <input  type="email" id="mailadd" name="mailadd" placeholder="Your email">
-                    <input  type="password" id="password" name="password"
-                    placeholder="Password">
-                    <input id="submit" type="submit" value="Login">
+                <input type="email" id="mailadd" name="mailadd" placeholder="Your email">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <!-- <input id="submit" type="submit" value="Login"> -->
+                <input class="btn" type="submit" value="Login">
             </form>
-            <p><a href="/"  class="cp_link">Back</a></p>
+            <a href="/"><button class="btn back_btn">Back</button></a>
+            <!-- <p><a href="/"  class="cp_link">Back</a></p> -->
         </div>
     </div>
-    
+
 
 </body>
+
 </html>

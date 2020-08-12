@@ -92,7 +92,7 @@ router.post('/',
                 judg = 0;
                 console.log("judg1:"+judg+ " results:" + results[0]);
                 let data = {
-                    content: '入力されたメールアドレスは既に登録されています。',
+                    content: '入力されたメールアドレスは<br>既に登録されています。',
                     form: {
                         mailadd: '',
                         password: ''
