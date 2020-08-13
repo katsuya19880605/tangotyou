@@ -4,20 +4,20 @@ var mysql =require('mysql');  //追加
 
 
 //MySQLの設定情報
-// var mysql_setting = {
-//     host : 'localhost',
-//     user : 'tangouser',
-//     password : 'tangopw',
-//     port : 3306,
-//     database: 'tango'
-// };
 var mysql_setting = {
-    host : 'us-cdbr-east-02.cleardb.com',
-    user : 'bfed9e31c6ea20',
-    password : 'd48043a8',
-    //port : 8889,
-    database: 'heroku_8359ae4e95655d7'
+    host : 'localhost',
+    user : 'tangouser',
+    password : 'tangopw',
+    port : 3306,
+    database: 'tango'
 };
+// var mysql_setting = {
+//     host : 'us-cdbr-east-02.cleardb.com',
+//     user : 'bfed9e31c6ea20',
+//     password : 'd48043a8',
+//     //port : 8889,
+//     database: 'heroku_8359ae4e95655d7'
+// };
 
 //GETのアクセス処理
 router.get('/',(req, res, next) => {
