@@ -51,7 +51,7 @@
         <div id="card" class="py-3 px-0">
             <p id="cnt" class="text-right">　</p>
             <div id="disparea" class="px-0 disparea dispareahight">
-                -START-
+                -- START --
             </div>
         </div>
 
@@ -188,7 +188,7 @@
                 }
             }
         }
-        disparea.textContent = '-START-';
+        disparea.textContent = '-- START --';
         disabled_release.disabled = true;      //backボタンの無効化
         disparea.classList.add('disparea');
         shufle(array);
@@ -226,7 +226,7 @@
         if (reset_flg) {
             let answer = confirm('You もう1回やっちゃいなよ ( ´⊿`)y-~~');
             if (answer) {
-                disparea.textContent = '-START-';
+                disparea.textContent = '-- START --';
                 disabled_release.disabled = true;      //backボタンの無効化
                 disparea.classList.add('disparea');
                 shufle(array);
@@ -243,7 +243,7 @@
             return;
         }
         if ((flg == 1 && cnt == quantity) || (flg == 1 && cnt == array.length)) {
-            disparea.textContent = '-END-';
+            disparea.textContent = '-- END --';
             disparea.classList.add('disparea');
             start.classList.remove('btn-color');
             start.classList.add('btn-color2');
