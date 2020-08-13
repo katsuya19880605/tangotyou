@@ -84,7 +84,7 @@ router.post('/',function(req, res, next){
                         };
         
                         let opt = {
-                            msg:'アップロード完了！',
+                            msg:'アップロード成功！',
                             file: file
                         };
                         res.render('edit',opt);

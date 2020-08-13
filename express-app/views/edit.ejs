@@ -5,51 +5,20 @@
     <title>CSV編集</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="/stylesheets/edit.css" />
-
     <script src="javascripts/jquery.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
 </head>
 
 <body>
-    <!-- <div class="container bg-secondary">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-                <a class="navbar-brand" href="#">単語テスト</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="personal">Top</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/NewFile">NewFile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/edit">Edit</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-    </div> -->
-    <p><%= msg %></p>
-
+   
+    <!-- アップロード成功 -->
+    <p id="UPend"><%= msg %></p>
 
     <div class="up-btn">
         <!-- <h1>お問い合わせ</h1> -->
-        <a id="modalOpen" class="modalOpen">UpLord</a>
+        <a id="modalOpen" class="modalOpen">UPLOAD</a>
     
         <!-- モーダル画面 -->
         <div class="modal" id="modal">
@@ -66,6 +35,7 @@
                         valueに編集データが入りdelete.jsにPOSTする -->
                 <button id="UPdata"  onclick="upCsv();">アップロード</button>
                 <span id="type-error"></span>
+                
 
             </div>
             <div class="m-close">
@@ -75,31 +45,15 @@
         <div class="mask" id="mask"></div>
     </div>
     
-<!-- <div class="tab-group">
-        <button type="button" class="tab is-active"><i class="fas fa-file-signature"></i> Edit data</a>
-        <button type="button" class="tab"><i class="fas fa-cloud-upload-alt"></i> UPload file</a>
-</div>
-     -->
-
-
-<!--タブを切り替えて表示するコンテンツ-->
-<!-- <div class="panel-group"> -->
-
-    <!----------------------------------------------------------->
-    <!------------------ コンテンツA ---------------------------->
-	<!-- <div class="panel is-show"> -->
-
         <!-- 一致するファイル名を表示 -->
-            <select id="sources" class="custom-select sources" placeholder="Edit">
+            <select id="sources" class="custom-select sources" placeholder="EDIT">
                 <% for(let i in file){ %>
                     <option value="<%= file[i]%>"><%= file[i]%></option>
                 <%}%>
             </select>
 
-            <!-- <button id="read" type="button" onclick="getCSV()">ファイルを読込む</button> -->
-
             <!-- 保存ボタンが押されたvalueに編集データが入りPOSTする -->
-                <button id="save" onclick="saveCsv();">保存する</button>
+                <button id="save" onclick="saveCsv();">SAVE</button>
                 <form method="POST" name="post">
                     <input id="name" type="hidden" name="name" value="">
                     <input id="data" type="hidden" name="data" value="">
@@ -121,34 +75,11 @@
                         <button id="row" onclick="newRow();">スペースを追加</button> 
                     </div>
                 </div>
-
-
-    <!-- </div> -->
-
-    <!----------------------------------------------------------->
-    <!------------------ コンテンツB ---------------------------->
-
-	<!-- <div class="panel"> -->
-
-
-       
-
-             
-    <!-- </div> -->
-<!-- </div> -->
   
     <div class="b_point">
-        <p><a href="personal">Back</a></p>
+        <p><a href="personal">BACK</a></p>
     </div>
  
- 
-    
-
-    
-
-
-
-
 </body>
 
 
@@ -188,7 +119,7 @@ document.getElementById("mask").addEventListener("click", function(){
   $("input[type='file']").on('change',function(){
      var file = $(this).prop('files')[0];
      if(!($(".filename").length)){
-       $("#input-group").append('<span class="filename"></span>');
+       $("#input-group").append('<br/><span class="filename"></span>');
      }
      $("#input-label").addClass('changed');
      $(".filename").html(file.name);
@@ -234,24 +165,17 @@ $(".custom-option").on("click", function() {
   $(this).addClass("selection");
   $(this).parents(".custom-select").removeClass("opened");
   $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
-//   $("#read").css('display', '');  //追加 ファイルを読み込みボタン表示
   getCSV();//読み込み関数呼び出し
 
 });
 
 
-//タブの切替
-jQuery(function($){
-	$('.tab').click(function(){
-		$('.is-active').removeClass('is-active');
-		$(this).addClass('is-active');
-		$('.is-show').removeClass('is-show');
-        // クリックしたタブからインデックス番号を取得
-		const index = $(this).index();
-        // クリックしたタブと同じインデックス番号をもつコンテンツを表示
-		$('.panel').eq(index).addClass('is-show');
-	});
-});
+//アップロード完了、５秒後消える
+setTimeout(function() {
+    $('#UPend').fadeOut();
+}, 1000);
+
+
 
 
 
@@ -502,6 +426,7 @@ jQuery(function($){
 
         //ファイル名の最後から4文字を切り出す  fName=グローバルスコープ
         let fNameBack = fName.substr(-4); 
+        UpErrs=''; //に初期化
         // ファイル形式チェック 
         if(fNameBack.match(fType) == null){
             UpErrs+="CSV形式ファイル以外はアップロードできません。<br>";
@@ -529,9 +454,11 @@ jQuery(function($){
 
             //アップデートボタン表示
             document.getElementById("UPdata").style.display = "";  
+            document.getElementById('type-error').innerHTML = "";
 
         }else{  //エラーの出力
             //エラー内容を出力
+            document.getElementById("UPdata").style.display = "none"; 
             document.getElementById('type-error').innerHTML = UpErrs;
         }        
     };
