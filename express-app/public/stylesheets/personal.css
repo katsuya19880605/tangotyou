@@ -1,0 +1,88 @@
+header {
+    background-color: deepskyblue;
+}
+
+.disparea {
+    text-align: center;
+    font-size: 60px;
+    padding: 60px 0px;
+}
+
+.dispareahight {
+    height: 280px;
+}
+
+.btn-color {
+    border-width: 3px;
+    color: deepskyblue;
+    border-color: deepskyblue;
+}
+
+.btn-color:hover {
+    color: #fff;
+    background-color: deepskyblue;
+    border-color: deepskyblue;
+}
+
+.btn-color2 {
+    border-width: 3px;
+    color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+.btn-color2:hover {
+    color: #fff;
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+.cp_ipselect {
+    overflow: hidden;
+    text-align: center;
+}
+
+.cp_ipselect select {
+    width: 100%;
+    padding-right: 1em;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+
+.cp_ipselect.cp_sl04 {
+    position: relative;
+    border-radius: .3rem;
+    border: 3px solid deepskyblue;
+    border-radius: .3rem;
+    background: #ffffff;
+}
+
+.cp_ipselect.cp_sl04::before {
+    position: absolute;
+    top: 0.8em;
+    right: 0.8em;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid deepskyblue;
+    pointer-events: none;
+}
+
+.cp_ipselect.cp_sl04 select {
+    padding: 8px 38px 8px 8px;
+    color: deepskyblue;
+}

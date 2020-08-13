@@ -34,21 +34,18 @@
                         </ul>
                     </div>
                 </nav>
-
             </div>
         </div>
     </header>
 
     <div class="container">
-        <div id="nav">
-            <div class="mt-3">
-                出題数：
-                <input type="radio" name="r" id="r1" value="0" onchange="select_radio()"><label for="r1">10問</label>
-                <input type="radio" name="r" id="r2" value="1" class="ml-2" onchange="select_radio()"><label
-                    for="r2">30問</label>
-                <input type="radio" name="r" id="r3" value="2" class="ml-2" checked onchange="select_radio()"><label
-                    for="r3">全問</label>
-            </div>
+        <div class="mt-3">
+            出題数：
+            <input type="radio" name="r" id="r1" value="0" onchange="select_radio()"><label for="r1">10問</label>
+            <input type="radio" name="r" id="r2" value="1" class="ml-2" onchange="select_radio()"><label
+                for="r2">30問</label>
+            <input type="radio" name="r" id="r3" value="2" class="ml-2" checked onchange="select_radio()"><label
+                for="r3">全問</label>
         </div>
 
         <div id="card" class="py-3 px-0">
@@ -94,7 +91,7 @@
     let pDiv1;
     let pDiv2;
     let pDiv3;
-    let pDiv4;;
+    let pDiv4;
     // let pDiv5 = document.getElementById("textdiv_5");
     let pcnt = document.getElementById("cnt");
     let start = document.getElementById("start");
@@ -103,7 +100,7 @@
     getCSV();
 
     //*****************************************************************
-    //CSVファイルを読み込む関数
+    //CSVファイル読み込み
     //*****************************************************************
     function getCSV() {
         let req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
@@ -228,7 +225,7 @@
         /*終了時の処理 問題が最後まで終わったら最初から繰り返す*/
         if (reset_flg) {
             let answer = confirm('You もう1回やっちゃいなよ ( ´⊿`)y-~~');
-            if(answer){
+            if (answer) {
                 disparea.textContent = '-START-';
                 disabled_release.disabled = true;      //backボタンの無効化
                 disparea.classList.add('disparea');
@@ -239,7 +236,7 @@
                 pcnt.innerText = cnt + '問目／' + quantity + '問';
                 start.innerHTML = 'NEXT';
                 reset_flg = false;
-            }else{
+            } else {
                 disparea.classList.add('disparea');
                 reset_flg = true;
             }
@@ -282,6 +279,7 @@
     };
 
     //*****************************************************************
+
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

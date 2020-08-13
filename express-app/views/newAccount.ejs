@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>NewAccount</title>
 </head>
- 
+
 <body>
-    <div class="main">  
-        <div class="warning">
-            <p ><%- content %></p>
-
-            <% if(errorMessage) { %>
-                <ul>
-                    <% for (let n in errorMessage) { %>
-                    <li>
-                        <%= errorMessage[n].msg %>
-                    </li>
-                    <% } %>
-                </ul>
-            <% } %>
-
-
-        </div>
+    <div class="main">
         <div class="login">
-            <h1>Signup</h1>
+            <h1>SignUp</h1>
+            <div class="warning">
+                <p class="message_deco"><%- content %></p>
+
+                <% if(errorMessage) { %>
+                <!-- <ul> -->
+                    <% for (let n in errorMessage) { %>
+                    <!-- <li> -->
+                        <p class="message_deco">
+                            <%= errorMessage[n].msg %>
+                        </p>
+                    <!-- </li> -->
+                    <% } %>
+                <!-- </ul> -->
+                <% } %>
+            </div>
             <form method="post" action="/newAccount">
-                <input type="email"  name="email"
-                placeholder="Your email" value="<%= form.email %>" >
-                <input type="password"  name="password"
-                placeholder="Create a password" value="<%= form.password %>">
-                <input type="password"  name="password2"
-                placeholder="Create a password(check)" value="<%= form.password2 %>">
-                <input id="submit" type="submit" value="Sign up for Tangotest">
+                <input type="email" name="email" placeholder="Your email" value="<%= form.email %>">
+                <input type="password" name="password" placeholder="Create a password" value="<%= form.password %>">
+                <input type="password" name="password2" placeholder="Create a password(check)"
+                    value="<%= form.password2 %>">
+                <input class="btn" type="submit" value="SignUp for Tangotest">
             </form>
-            <p><a href="/" class="cp_link">Back</a></p>
+            <a href="/"><button class="btn back_btn">Back</button></a>
         </div>
     </div>
 
 
-    
+
 
 </body>
+
 </html>

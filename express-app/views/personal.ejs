@@ -3,65 +3,86 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>tangotest</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
-    <!-- <link rel="stylesheet" href="style_1.css"> -->
+    <title>単語帳</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/personal.css">
 </head>
 
 <body>
-    <div class="container bg-secondary">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-                <a class="navbar-brand" href="#">単語テスト</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <!-- 追加 -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="personal">Top</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/NewFile">NewFile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/edit">Edit</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-    </div>
+    <header>
+        <div class="hero">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark px-0">
+
+                    <a class="navbar-brand" href="#">単語帳</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="personal">Top</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/edit">Edit</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
 
     <div class="container">
-        <div id="nav">
-            <!-- 変更 -->
-            <p>ファイル選択：<br>
-                <select id="target">
+
+        <div class="mt-3">
+            <p>読み込むファイル：
+                <select id="target" class="cp_ipselect cp_sl04" onchange="chage_csv()">
                     <% for(let i in file){ %>
                     <option><%= file[i]%>
-                        <%}%>
-                  </select>
-                  <button type="button" class="btn btn-outline-primary" onclick="getCSV()">ファイルを読込む</button>
+                    <%}%>
+                </select>
+                <!-- <button type="button" class="btn btn-outline-primary" onclick="getCSV()">ファイルを読込む</button> -->
             </p>
-           
-            <div>
-                <input type="radio" name="r" id="r1" value="0"><label for="r1" class="mr-3">10問</label>
-                <input type="radio" name="r" id="r2" value="1"><label for="r2" class="mr-3">30問</label>
-                <input type="radio" name="r" id="r3" value="2"><label for="r3" class="mr-3">全問</label>
+        </div>
+        
+        <div class="mt-3">
+            出題数：
+            <input type="radio" name="r" id="r1" value="0" onchange="select_radio()"><label for="r1">10問</label>
+            <input type="radio" name="r" id="r2" value="1" class="ml-2" onchange="select_radio()"><label
+                for="r2">30問</label>
+            <input type="radio" name="r" id="r3" value="2" class="ml-2" checked onchange="select_radio()"><label
+                for="r3">全問</label>
+        </div>
+
+        <div id="card" class="py-3 px-0">
+            <p id="cnt" class="text-right">　</p>
+            <div id="disparea" class="px-0 disparea dispareahight">
+                -START-
             </div>
         </div>
 
         <div class="row">
+            <div class="col-sm-6 order-sm-1 order-2">
+                <button type="button" disabled id="back" name="back"
+                    class="btn btn-lg font-weight-bold btn-color w-100 mt-4 mt-sm-0" onclick="back()">BACK</button>
+            </div>
+            <div class="col-sm-6 order-sm-2 order-1">
+                <button type="button" id="start" class="btn btn-lg font-weight-bold btn-color w-100"
+                    onclick="changeText()">NEXT</button>
+            </div>
+            <form name="restart"></form>
+        </div>
+    </div>
+        <!-- <div class="row">
             <div class="col-md-9">
                 <div id="card">
                     <div class="card-body">
@@ -83,7 +104,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- <p id="abc"></p> -->
     <footer>
       
@@ -98,21 +119,41 @@
     let cnt = 0;
     let flg = 1;
     let quantity = 0;
+    let reset_flg = false;
+
     let fileInput = document.getElementById("01");
-    let elements = document.getElementsByName("r");
-    let pDiv1 = document.getElementById("textdiv_1");
-    let pDiv2 = document.getElementById("textdiv_2");
-    let pDiv3 = document.getElementById("textdiv_3");
-    let pDiv4 = document.getElementById("textdiv_4");
-    let pDiv5 = document.getElementById("textdiv_5");
+    // let elements = document.getElementsByName("r");
+    let elements;
+    let disabled_release = document.getElementById("back");
+    let disparea = document.getElementById("disparea");
+    let pDiv1;
+    let pDiv2;
+    let pDiv3;
+    let pDiv4;
+    let pDiv5;
     let pcnt = document.getElementById("cnt");
+    let start = document.getElementById("start");
     let fileReader = new FileReader();
     // 追加
-    var fileElement = document.getElementById("target");
+    //var fileElement = document.getElementById("target");
+    let fileElement = document.getElementById("target");
     // 全てのoption要素を取得
-    var fileElements = fileElement.options;
+    //var fileElements = fileElement.options;
+    let fileElements = fileElement.options;
 
-    //  追加
+    getCSV();
+    
+    //*****************************************************************
+    //読み込むファイルを選択したらcsv読み込み
+    //*****************************************************************
+    function chage_csv(){
+        fileElement = document.getElementById("target");
+        fileElements = fileElement.options;
+        getCSV();
+        select_radio();
+        elements[2].checked = true;
+    }
+
     //*****************************************************************
     //CSVファイル読み込み
     //*****************************************************************
@@ -124,7 +165,7 @@
             }
         };
         let req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
-        req.open("get","csv/" + csvFile, true); // アクセスするファイルを指定   
+        req.open("get", "csv/" + csvFile, true); // アクセスするファイルを指定   
         req.send(null); // HTTPリクエストの発行
         // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ	
         req.onload = function () {
@@ -132,6 +173,7 @@
             shufle(array);
         }
     }
+
     //*****************************************************************
     //
     //*****************************************************************
@@ -153,13 +195,14 @@
     //* 読み込んだCSVデータが文字列として渡される
     function convertCSVtoArray(str) {
         let tmp = str.split("\n");
-        
-        
-
         for (let i = 0; i < tmp.length; ++i) {
             array[i] = tmp[i].split(',');
         }
+        quantity = array.length;
+        pcnt.innerText = 0 + '問目／' + quantity + '問';
+        console.log(quantity);
     }
+
     //*****************************************************************
     // shufle(ary) 配列のランダムソート 
     //*****************************************************************
@@ -171,34 +214,32 @@
             array[j] = tmp;
         }
     }
+
     //*****************************************************************
     // Reset()
     //*****************************************************************
-    function Reset() {
-        cnt = 0;
-        flg = 1;
-        pcnt.innerText = '　';
-        pDiv1.innerHTML = '　';
-        pDiv2.innerHTML = '　';
-        pDiv3.innerHTML = '　';
-        pDiv4.innerHTML = '　';
-        pDiv5.innerHTML = '　';
-        for (var i = array.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var tmp = array[i];
-            array[i] = array[j];
-            array[j] = tmp;
-        }
-    };
+    // function Reset() {
+    //     cnt = 0;
+    //     flg = 1;
+    //     pcnt.innerText = '　';
+    //     pDiv1.innerHTML = '　';
+    //     pDiv2.innerHTML = '　';
+    //     pDiv3.innerHTML = '　';
+    //     pDiv4.innerHTML = '　';
+    //     pDiv5.innerHTML = '　';
+    //     for (var i = array.length - 1; i > 0; i--) {
+    //         var j = Math.floor(Math.random() * (i + 1));
+    //         var tmp = array[i];
+    //         array[i] = array[j];
+    //         array[j] = tmp;
+    //     }
+    // };
 
     //*****************************************************************
-    // changeText() ボタンを押されたら表示を変える関数 
+    // select_radio() 選択した問題数を反映
     //*****************************************************************
-    function changeText() {
-
-        
-        quantity = array.length;
-        // document.getElementById("abc").innerHTML=quantity;
+    function select_radio() {
+        elements = document.getElementsByName("r");
         for (var i = elements.length; i--;) {
             if (elements[i].checked) {
                 switch (elements[i].value) {
@@ -214,44 +255,156 @@
                 }
             }
         }
-        // ↓削除
-        // if (!(fileReader.result)) {
-        //     return;
-        // }
+        disparea.textContent = '-START-';
+        disabled_release.disabled = true;      //backボタンの無効化
+        disparea.classList.add('disparea');
+        shufle(array);
+        cnt = 0;    //ラジオボタン選択時にカウントを初期化する
+        pcnt.innerText = cnt + '問目／' + quantity + '問';
+    }
 
-        if ((flg == 1 && cnt == quantity) || (flg == 1 && cnt == array.length)) {
-            pDiv1.innerText = "終了です。";
-            pDiv2.innerHTML = '　';
-            pDiv3.innerHTML = '　';
-            pDiv4.innerHTML = '　';
-            pDiv5.innerHTML = '　';
+    //*****************************************************************
+    // back() ひとつ前の略語表示に戻る
+    //*****************************************************************
+    function back() {
+        cnt--;
+        if (cnt < 0) {
+            cnt = 0
+        }
+        flg = 0;
+        disparea.textContent = array[cnt][flg];
+        disparea.classList.add('disparea');
+        pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
+        disparea.classList.add('disparea');
+        start.classList.remove('btn-color2');
+        start.classList.add('btn-color');
+        start.innerHTML = 'NEXT';
+        reset_flg = false;
+        flg = 0;
+    };
+
+    //*****************************************************************
+    // changeText() ボタンを押されたら表示を変える関数 
+    //*****************************************************************
+    function changeText() {
+        disparea.classList.remove('disparea');
+
+        /*終了時の処理 問題が最後まで終わったら最初から繰り返す*/
+        if (reset_flg) {
+            let answer = confirm('You もう1回やっちゃいなよ ( ´⊿`)y-~~');
+            if (answer) {
+                disparea.textContent = '-START-';
+                disabled_release.disabled = true;      //backボタンの無効化
+                disparea.classList.add('disparea');
+                shufle(array);
+                cnt = 0;    //ラジオボタン選択時にカウントを初期化する
+                start.classList.remove('btn-color2');
+                start.classList.add('btn-color');
+                pcnt.innerText = cnt + '問目／' + quantity + '問';
+                start.innerHTML = 'NEXT';
+                reset_flg = false;
+            } else {
+                disparea.classList.add('disparea');
+                reset_flg = true;
+            }
             return;
         }
+        if ((flg == 1 && cnt == quantity) || (flg == 1 && cnt == array.length)) {
+            disparea.textContent = '-END-';
+            disparea.classList.add('disparea');
+            start.classList.remove('btn-color');
+            start.classList.add('btn-color2');
+            pcnt.innerText = cnt + '問目／' + quantity + '問';
+            start.innerHTML = 'Re:START';
+            reset_flg = true;
+            return;
+        }
+        /*終了時の処理　ここまで*/
 
-        // 変更
         flg = flg ^ 1;
         if (flg == 0) {
-            if (array[cnt][4] == "1"){
-                cnt++;
-                flg = 1;
-                return;
-            };
-            pDiv1.innerHTML = array[cnt][flg];
-            pDiv2.innerHTML = '　';
-            pDiv3.innerHTML = '　';
-            pDiv4.innerHTML = '　';
-            pDiv5.innerHTML = '　';
+            disparea.textContent = array[cnt][flg];
+            disparea.classList.add('disparea');
             pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
-
         } else {
+            disparea.innerHTML = '<div class="py-3"><h2 id="textdiv_1" class="text-center">　</h2><p class="border-bottom text-center"><span id="textdiv_2">　</span></p><p class="border-bottom text-center"><span id="textdiv_3">　</span></p><p class="border-bottom text-center"><span id="textdiv_4">　</span></p><p class="border-bottom text-center"><span id="textdiv_5">　</span></p></div>';
+            disparea.classList.remove('disparea');
+
+            pDiv1 = document.getElementById("textdiv_1");
+            pDiv2 = document.getElementById("textdiv_2");
+            pDiv3 = document.getElementById("textdiv_3");
+            pDiv4 = document.getElementById("textdiv_4");
+            pDiv5 = document.getElementById("textdiv_5");
+
+            pDiv1.innerHTML = array[cnt][flg - 1];
             pDiv2.innerHTML = array[cnt][flg];
             pDiv3.innerHTML = array[cnt][flg + 1];
             pDiv4.innerHTML = array[cnt][flg + 2];
             pDiv5.innerHTML = '覚えた　<input type="radio" name="gakunen" value="1">はい';//ダミー実装
             cnt++;
         }
+
+        disabled_release.disabled = false;      //backボタンの有効化
     };
+    // function changeText() {
+
+
+    //     quantity = array.length;
+    //     // document.getElementById("abc").innerHTML=quantity;
+    //     for (var i = elements.length; i--;) {
+    //         if (elements[i].checked) {
+    //             switch (elements[i].value) {
+    //                 case "0":
+    //                     quantity = 10;
+    //                     break;
+    //                 case "1":
+    //                     quantity = 30;
+    //                     break;
+    //                 case "2":
+    //                     quantity = array.length;
+    //                     break;
+    //             }
+    //         }
+    //     }
+    //     // ↓削除
+    //     // if (!(fileReader.result)) {
+    //     //     return;
+    //     // }
+
+    //     if ((flg == 1 && cnt == quantity) || (flg == 1 && cnt == array.length)) {
+    //         pDiv1.innerText = "終了です。";
+    //         pDiv2.innerHTML = '　';
+    //         pDiv3.innerHTML = '　';
+    //         pDiv4.innerHTML = '　';
+    //         pDiv5.innerHTML = '　';
+    //         return;
+    //     }
+
+    //     // 変更
+    //     flg = flg ^ 1;
+    //     if (flg == 0) {
+    //         if (array[cnt][4] == "1") {
+    //             cnt++;
+    //             flg = 1;
+    //             return;
+    //         };
+    //         pDiv1.innerHTML = array[cnt][flg];
+    //         pDiv2.innerHTML = '　';
+    //         pDiv3.innerHTML = '　';
+    //         pDiv4.innerHTML = '　';
+    //         pDiv5.innerHTML = '　';
+    //         pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
+
+    //     } else {
+    //         pDiv2.innerHTML = array[cnt][flg];
+    //         pDiv3.innerHTML = array[cnt][flg + 1];
+    //         pDiv4.innerHTML = array[cnt][flg + 2];
+    //         pDiv5.innerHTML = '覚えた　<input type="radio" name="gakunen" value="1">はい';//ダミー実装
+    //         cnt++;
+    //     }
+    // };
     //*****************************************************************
+
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
