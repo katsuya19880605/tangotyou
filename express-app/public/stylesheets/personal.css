@@ -66,6 +66,7 @@ header {
     border: 3px solid deepskyblue;
     border-radius: .3rem;
     background: #ffffff;
+    max-width: 140px;
 }
 
 .cp_ipselect.cp_sl04::before {
