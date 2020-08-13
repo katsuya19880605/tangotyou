@@ -66,16 +66,16 @@
         <div id="card" class="py-3 px-0">
             <p id="cnt" class="text-right">　</p>
             <div id="disparea" class="px-0 disparea dispareahight">
-                -START-
+                -- START --
             </div>
         </div>
 
         <div class="row">
-            <div class="col-sm-6 order-sm-1 order-2 mb-3">
+            <div class="col-sm-3 offset-sm-2 order-sm-1 order-2 mb-3">
                 <button type="button" disabled id="back" name="back"
                     class="btn btn-lg font-weight-bold btn-color w-100 mt-4 mt-sm-0" onclick="back()">BACK</button>
             </div>
-            <div class="col-sm-6 order-sm-2 order-1">
+            <div class="col-sm-3 offset-sm-2 order-sm-2 order-1">
                 <button type="button" id="start" class="btn btn-lg font-weight-bold btn-color w-100"
                     onclick="changeText()">NEXT</button>
             </div>
@@ -255,7 +255,7 @@
                 }
             }
         }
-        disparea.textContent = '-START-';
+        disparea.textContent = '-- START --';
         disabled_release.disabled = true;      //backボタンの無効化
         disparea.classList.add('disparea');
         shufle(array);
@@ -293,7 +293,7 @@
         if (reset_flg) {
             let answer = confirm('You もう1回やっちゃいなよ ( ´⊿`)y-~~');
             if (answer) {
-                disparea.textContent = '-START-';
+                disparea.textContent = '-- START --';
                 disabled_release.disabled = true;      //backボタンの無効化
                 disparea.classList.add('disparea');
                 shufle(array);
@@ -310,7 +310,7 @@
             return;
         }
         if ((flg == 1 && cnt == quantity) || (flg == 1 && cnt == array.length)) {
-            disparea.textContent = '-END-';
+            disparea.textContent = '-- END --';
             disparea.classList.add('disparea');
             start.classList.remove('btn-color');
             start.classList.add('btn-color2');
