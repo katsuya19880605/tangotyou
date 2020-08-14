@@ -9,7 +9,8 @@ router.get('/',function(req, res, next){
     //セッションIDの有無をチェック
     if (req.session.loginID != undefined){
         
-        let file = [];  
+        let file = [];
+        let fileNameArray = [];
         let fileName = fs.readdirSync("public/csv"); //パス直下のファイルやディレクトリ名全てが文字列の配列で返ってくる
         for(let i in fileName){
             var cut_str = '_';
@@ -17,12 +18,14 @@ router.get('/',function(req, res, next){
             //先頭の文字を切り出してセッションIDと照合
             if (req.session.loginID == fileName[i].substr(0,index) ){
                 file.push(fileName[i]); //該当したファイル名を配列に追加
+                fileNameArray.push(fileName[i].slice(index + 1)); //ファイル名からIDを除いて配列に追加
             }    
         };
         
         let opt = {
             msg:'',
-            file: file
+            file: file,
+            fileName: fileNameArray
         };
         res.render('edit',opt);
     
@@ -71,7 +74,8 @@ router.post('/',function(req, res, next){
                         console.log("ファイルが正常に書き出しされました");
 
                         //ファイル名の検索処理
-                        let file = [];  
+                        let file = [];
+                        let fileNameArray = [];
                         //パス直下のファイルやディレクトリ名全てが文字列の配列で返ってくる
                         let fileName = fs.readdirSync("public/csv"); 
                         for(let i in fileName){
@@ -80,12 +84,14 @@ router.post('/',function(req, res, next){
                             //先頭の文字を切り出してセッションIDと照合
                             if (req.session.loginID == fileName[i].substr(0,index) ){
                                 file.push(fileName[i]); //該当したファイル名を配列に追加
+                                fileNameArray.push(fileName[i].slice(index + 1)); //ファイル名からIDを除いて配列に追加
                             }    
                         };
         
                         let opt = {
                             msg:'アップロード成功！',
-                            file: file
+                            file: file,
+                            fileName: fileNameArray
                         };
                         res.render('edit',opt);
                         
