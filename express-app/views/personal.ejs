@@ -50,7 +50,7 @@
                     <option><%= file[i]%>
                     <%}%>
                 </select>
-                <!-- <button type="button" class="btn btn-outline-primary" onclick="getCSV()">ファイルを読込む</button> -->
+            
             </p>
         </div>
         
@@ -82,30 +82,14 @@
             <form name="restart"></form>
         </div>
     </div>
-        <!-- <div class="row">
-            <div class="col-md-9">
-                <div id="card">
-                    <div class="card-body">
-                        <div class="text-right"><p id="cnt">　</p></div>
-                        <h2 id="textdiv_1" class="text-center">　</h2>
-                        <p class="border-bottom text-center"><span id="textdiv_2">　</span></p>
-                        <p class="border-bottom text-center"><span id="textdiv_3">　</span></p>
-                        <p class="border-bottom text-center"><span id="textdiv_4">　</span></p>
-                        <p class="border-bottom text-center"><span id="textdiv_5">　</span></p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-3 mt-md-5 mb-5">
-                <div id="qus" class="mx-auto">
-                    <button type="button" class="btn btn-outline-success w-100 mt-5"
-                        onclick="changeText()">START</button>
-                    <button type="button" class="btn btn-outline-success w-100 mt-3" onclick="Reset()">Reset</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- <p id="abc"></p> -->
+    <!-- 追加 -->
+    <form method="POST" name="post">
+        <input id="data" type="hidden" name="data" value="">
+    </form>
+
+
+       
     <footer>
       
     </footer>
@@ -174,21 +158,7 @@
         }
     }
 
-    //*****************************************************************
-    //
-    //*****************************************************************
-    // fileInput.onchange = () => {
-    //     let file = fileInput.files[0];
-    //     fileReader.readAsText(file);
-    // };
-    // //* レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ	
-    // fileReader.onload = function () {
-
-    //     convertCSVtoArray(fileReader.result); // 渡されるのは読み込んだCSVデータ
-    //     shufle(array);
-
-    // }
-
+    
     //*****************************************************************
     // convertCSVtoArray() 読み込んだCSVデータを二次元配列に変換する関数 
     //*****************************************************************
@@ -215,25 +185,7 @@
         }
     }
 
-    //*****************************************************************
-    // Reset()
-    //*****************************************************************
-    // function Reset() {
-    //     cnt = 0;
-    //     flg = 1;
-    //     pcnt.innerText = '　';
-    //     pDiv1.innerHTML = '　';
-    //     pDiv2.innerHTML = '　';
-    //     pDiv3.innerHTML = '　';
-    //     pDiv4.innerHTML = '　';
-    //     pDiv5.innerHTML = '　';
-    //     for (var i = array.length - 1; i > 0; i--) {
-    //         var j = Math.floor(Math.random() * (i + 1));
-    //         var tmp = array[i];
-    //         array[i] = array[j];
-    //         array[j] = tmp;
-    //     }
-    // };
+    
 
     //*****************************************************************
     // select_radio() 選択した問題数を反映
@@ -340,70 +292,27 @@
             pDiv2.innerHTML = array[cnt][flg];
             pDiv3.innerHTML = array[cnt][flg + 1];
             pDiv4.innerHTML = array[cnt][flg + 2];
-            pDiv5.innerHTML = '覚えた　<input type="radio" name="gakunen" value="1">はい';//ダミー実装
+            pDiv5.innerHTML = '覚えた　<input type="radio" name="gakunen" value="1" onchange="chagePM()">はい';//ダミー実装
             cnt++;
-        }
 
+        }
         disabled_release.disabled = false;      //backボタンの有効化
     };
-    // function changeText() {
 
 
-    //     quantity = array.length;
-    //     // document.getElementById("abc").innerHTML=quantity;
-    //     for (var i = elements.length; i--;) {
-    //         if (elements[i].checked) {
-    //             switch (elements[i].value) {
-    //                 case "0":
-    //                     quantity = 10;
-    //                     break;
-    //                 case "1":
-    //                     quantity = 30;
-    //                     break;
-    //                 case "2":
-    //                     quantity = array.length;
-    //                     break;
-    //             }
-    //         }
-    //     }
-    //     // ↓削除
-    //     // if (!(fileReader.result)) {
-    //     //     return;
-    //     // }
+    //////////////////追加/////////////////////
+    function chagePM() {
+        var palam = document.getElementsByName("gakunen");
+        if(palam[0].checked) {
+            console.log("選択された値：", pDiv1.innerText);
+            let data= pDiv1.innerText;
+            document.getElementById("data").value = pDiv1.innerText;
+            document.post.submit();
+        };
+    };
 
-    //     if ((flg == 1 && cnt == quantity) || (flg == 1 && cnt == array.length)) {
-    //         pDiv1.innerText = "終了です。";
-    //         pDiv2.innerHTML = '　';
-    //         pDiv3.innerHTML = '　';
-    //         pDiv4.innerHTML = '　';
-    //         pDiv5.innerHTML = '　';
-    //         return;
-    //     }
 
-    //     // 変更
-    //     flg = flg ^ 1;
-    //     if (flg == 0) {
-    //         if (array[cnt][4] == "1") {
-    //             cnt++;
-    //             flg = 1;
-    //             return;
-    //         };
-    //         pDiv1.innerHTML = array[cnt][flg];
-    //         pDiv2.innerHTML = '　';
-    //         pDiv3.innerHTML = '　';
-    //         pDiv4.innerHTML = '　';
-    //         pDiv5.innerHTML = '　';
-    //         pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
-
-    //     } else {
-    //         pDiv2.innerHTML = array[cnt][flg];
-    //         pDiv3.innerHTML = array[cnt][flg + 1];
-    //         pDiv4.innerHTML = array[cnt][flg + 2];
-    //         pDiv5.innerHTML = '覚えた　<input type="radio" name="gakunen" value="1">はい';//ダミー実装
-    //         cnt++;
-    //     }
-    // };
-    //*****************************************************************
+     
 
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
