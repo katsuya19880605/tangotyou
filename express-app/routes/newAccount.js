@@ -6,20 +6,28 @@ const { check, validationResult } = require('express-validator/check')
 
 
 //MySQLの設定情報
-// var mysql_setting = {
-//     host: 'localhost',
-//     user: 'tangouser',
-//     password: 'tangopw',
-//     port: 3306,
-//     database: 'tango'
-// };
 var mysql_setting = {
-    host : 'us-cdbr-east-02.cleardb.com',
-    user : 'bfed9e31c6ea20',
-    password : 'd48043a8',
-    //port : 8889,
-    database: 'heroku_8359ae4e95655d7'
+    host: 'localhost',
+    user: 'tangouser',
+    password: 'tangopw',
+    port: 3306,
+    database: 'tango'
 };
+
+// var mysql_setting = {
+//     host : 'us-cdbr-east-02.cleardb.com',
+//     user : 'bfed9e31c6ea20',
+//     password : 'd48043a8',
+//     //port : 8889,
+//     database: 'heroku_8359ae4e95655d7'
+// };
+
+// var mysql_setting = {
+//     host : 'us-cdbr-east-02.cleardb.com',
+//     user: "bc6ad563b3e02b",
+//     password: "cd98ab61",
+//     database: "heroku_568920a38321ad7"
+// };
 
 //GETのアクセス処理
 router.get('/', (req, res, next) => {

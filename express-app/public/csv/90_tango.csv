@@ -124,7 +124,7 @@ TCP,Transmission Control Protocol,［US］トゥランスミッション　コ�
 TELNET,TELetype NETwork,テレタイプ　ネットワーク　,TCP/IPネットワークを通じて別のコンピュータにアクセスし、遠隔操作するためのプロトコル,1
 TOB,TakeOver Bid,テークオーヴァ（ァ）　ビドゥ　,上場企業の株式を、買い取り条件を公表して不特定多数の株主から株式市場外で買い付けること,1
 UDP,User Datagram Protocol,ユーザ（ァ）　データグラム　プロトコル,ポート番号で上位層のアプリを判別し、通信相手の状況を確認せずにデータを送り付ける速度を重視したコネクションレス型のプロトコル,1
-UML,Unified Modeling Language,ユーニファイドゥ　［US］マデリング　ラングウェジ,統一モデリング言語,0
+UML,Unified Modeling Language,ユーニファイドゥ　［US］マデリング　ラングウェジ,統一モデリング言語,1
 UPS,Uninterruptible Power Supply,アンインターラプタブル　パワー　サプライ,無停電電源装置,1
 URL,Uniform Resource Locator,ユーニフォーム　［US］リーソース　ロウケイタ（ァ）,インターネット上に存在するデータやサービスなどの情報資源の位置を記述する標準的な記法,1
 USB,Universal Serial Bus,［US］ユニヴァーサル　スィ（ア）リアル　バス,コンピュータと周辺機器を繋ぐのに用いられるデータ伝送路の標準規格,1

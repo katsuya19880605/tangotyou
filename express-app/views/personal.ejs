@@ -47,7 +47,7 @@
             <p>読み込むファイル：
                 <select id="target" class="cp_ipselect cp_sl04" onchange="chage_csv()">
                     <% for(let i in file){ %>
-                    <option><%= file[i]%>
+                    <option value="<%= file[i]%>"><%= fileName[i]%></option>
                     <%}%>
                 </select>
             
@@ -85,9 +85,18 @@
 
     <!-- 追加 -->
     <form method="POST" name="post">
-        <input id="data" type="hidden" name="data" value="">
+        <input id="now_cnt" type="hidden" name="now_cnt" value="">
+        <input id="S_Data" type="hidden" name="S_Data" value="">
+        <input id="O_Data" type="hidden" name="O_Data" value="">
     </form>
 
+   
+
+    <!-- personal.jsからデータを受け取って変数に渡す -->
+    <script>now_cnt = "<%= cnt_data %>";</script>
+    <script>at_data = "<%= at_data %>";</script>
+   
+    
 
        
     <footer>
@@ -95,6 +104,10 @@
     </footer>
 </body>
 <script>
+
+// console.log(now_cnt);
+
+
     'use strict';
     //*****************************************************************
     // 宣言エリア
@@ -104,6 +117,8 @@
     let flg = 1;
     let quantity = 0;
     let reset_flg = false;
+    //追加
+    let allDataArray = [];
 
     let fileInput = document.getElementById("01");
     // let elements = document.getElementsByName("r");
@@ -119,11 +134,10 @@
     let start = document.getElementById("start");
     let fileReader = new FileReader();
     // 追加
-    //var fileElement = document.getElementById("target");
     let fileElement = document.getElementById("target");
     // 全てのoption要素を取得
-    //var fileElements = fileElement.options;
     let fileElements = fileElement.options;
+
 
     getCSV();
     
@@ -142,19 +156,41 @@
     //CSVファイル読み込み
     //*****************************************************************
     function getCSV() {
-        let csvFile = "";
-        for (var i = 0, l = fileElements.length; l > i; i++) {
-            if (fileElements[i].selected) {
-                csvFile = fileElements[i].value
+
+        if(at_data ==''){
+            let csvFile = "";
+            for (var i = 0, l = fileElements.length; l > i; i++) {
+                if (fileElements[i].selected) {
+                    csvFile = fileElements[i].value
+                }
+            };
+            let req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
+            req.open("get", "csv/" + csvFile, true); // アクセスするファイルを指定   
+            req.send(null); // HTTPリクエストの発行
+            // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ	
+            req.onload = function () {
+                convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
+                shufle(array);
             }
-        };
-        let req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
-        req.open("get", "csv/" + csvFile, true); // アクセスするファイルを指定   
-        req.send(null); // HTTPリクエストの発行
-        // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ	
-        req.onload = function () {
-            convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
-            shufle(array);
+
+        //ステータス変更後、戻りデータがある場合
+        }else{
+            // console.log("back");
+
+            let csvFile = "";
+            for (var i = 0, l = fileElements.length; l > i; i++) {
+                if (fileElements[i].selected) {
+                    csvFile = fileElements[i].value
+                }
+            };
+            let req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
+            req.open("get", "csv/" + csvFile, true); // アクセスするファイルを指定   
+            req.send(null); // HTTPリクエストの発行
+            // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ	
+            req.onload = function () {
+                BacktoArray(req.responseText, at_data, now_cnt); 
+
+            }
         }
     }
 
@@ -165,18 +201,68 @@
     //* 読み込んだCSVデータが文字列として渡される
     function convertCSVtoArray(str) {
         let tmp = str.split("\n");
+        allDataArray = [];
+        array = [];
         for (let i = 0; i < tmp.length; ++i) {
+            allDataArray[i] = tmp[i].split(',');
+            tmp[i] = tmp[i].replace(/\r/g, '');
             array[i] = tmp[i].split(',');
+            array[i].push(i+"\n");
         }
+        // console.log(array);
+
+        for (let i = 0; i < array.length; ++i) {
+            if(array[i][4] == 0){
+                array.splice(i,1)
+                --i;
+            }     
+        } 
+        // console.log(array);
+
         quantity = array.length;
         pcnt.innerText = 0 + '問目／' + quantity + '問';
         console.log(quantity);
+
+    }
+
+    //*****************************************************************
+    // BacktoArray() 読み込んだCSVデータを二次元配列に変換する関数 
+    //*****************************************************************
+    //* 読み込んだCSVデータが文字列として渡される
+    function BacktoArray(str, array, now_cnt) {
+
+        let tmp = str.split("\n");
+        let array2 = array.split("\n");
+        array2.pop() ; //最後の空白行を消去
+        
+        console.log(array2);
+
+
+        allDataArray = [];
+        for (let i = 0; i < tmp.length; ++i) {
+            allDataArray[i] = tmp[i].split(',');
+        }
+
+        let Sct_Array = [];
+        for (let i = 0; i < array2.length; ++i) {
+            Sct_Array[i] = array2[i].split(',');
+        }
+
+       
+        console.log("now_cnt→"+now_cnt);
+        
+        console.log(Sct_Array);
+
+        quantity = Sct_Array.length;
+        pcnt.innerText = now_cnt + '問目／' + quantity + '問';
+        console.log(quantity);
+
     }
 
     //*****************************************************************
     // shufle(ary) 配列のランダムソート 
     //*****************************************************************
-    function shufle(ary) {
+    function shufle(array) {
         for (var i = array.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
             var tmp = array[i];
@@ -211,7 +297,13 @@
         disabled_release.disabled = true;      //backボタンの無効化
         disparea.classList.add('disparea');
         shufle(array);
-        cnt = 0;    //ラジオボタン選択時にカウントを初期化する
+        // console.log(array);
+
+        if(now_cnt!=0){
+            cnt = now_cnt;
+        }else{
+            cnt = 0;    //ラジオボタン選択時にカウントを初期化する
+        }
         pcnt.innerText = cnt + '問目／' + quantity + '問';
     }
 
@@ -250,6 +342,7 @@
                 disparea.classList.add('disparea');
                 shufle(array);
                 cnt = 0;    //ラジオボタン選択時にカウントを初期化する
+                now_cnt = 0;    //ラジオボタン選択時にカウントを初期化する
                 start.classList.remove('btn-color2');
                 start.classList.add('btn-color');
                 pcnt.innerText = cnt + '問目／' + quantity + '問';
@@ -273,26 +366,69 @@
         }
         /*終了時の処理　ここまで*/
 
-        flg = flg ^ 1;
+        flg = flg ^ 1;  //フラグのスイッチXOR
         if (flg == 0) {
+
+
+    //////覚えたチェックが入っている状態でnextボタンを押した時///////////
+
+            if(cnt>0){
+                let sts = document.getElementById("sts");
+                if(sts.checked){
+                    //変更するナンバを取得
+                    let edit_cnt=Number(array[cnt-1][flg + 5]);
+                    let now_cnt=cnt-1;
+                    array[cnt-1][flg + 4]='0';
+                    allDataArray[edit_cnt][4]='0\n';
+
+                    let Sct_Data ="";
+                    array.forEach(function(rowvals) {
+                        let array_row = rowvals.join(",");
+                        Sct_Data += array_row;
+                    });
+                    console.log("now_cnt"+now_cnt);
+                    // console.log(Sct_Data);
+
+
+                    let Org_Data ="";
+                    allDataArray.forEach(function(rowvals) {
+                        let row = rowvals.join(",");
+                        Org_Data += row;
+                    });
+                    // console.log(Org_Data);
+
+
+                    //シャッフル後のデータ
+                    document.getElementById("now_cnt").value=now_cnt;
+                    //シャッフル後のデータ
+                    document.getElementById("S_Data").value=Sct_Data;
+                    //元データ
+                    document.getElementById("O_Data").value=Org_Data;
+                   
+                    document.post.submit();
+                };
+            };
+
+
             disparea.textContent = array[cnt][flg];
             disparea.classList.add('disparea');
             pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
         } else {
-            disparea.innerHTML = '<div class="py-3"><h2 id="textdiv_1" class="text-center">　</h2><p class="border-bottom text-center"><span id="textdiv_2">　</span></p><p class="border-bottom text-center"><span id="textdiv_3">　</span></p><p class="border-bottom text-center"><span id="textdiv_4">　</span></p><p class="border-bottom text-center"><span id="textdiv_5">　</span></p></div>';
+            disparea.innerHTML = '<div class="py-3"><h2 id="textdiv_1" class="text-center">　</h2><p class="border-bottom text-center"><span id="textdiv_2">　</span></p><p class="border-bottom text-center"><span id="textdiv_3">　</span></p><p class="border-bottom text-center"><span id="textdiv_4">　</span></p></div><div class="check"><input type="checkbox" id="sts" value="1">覚えた</div>';
+                // <p class="border-bottom text-center"><span id="textdiv_5">　</span></p>
+                
             disparea.classList.remove('disparea');
 
             pDiv1 = document.getElementById("textdiv_1");
             pDiv2 = document.getElementById("textdiv_2");
             pDiv3 = document.getElementById("textdiv_3");
             pDiv4 = document.getElementById("textdiv_4");
-            pDiv5 = document.getElementById("textdiv_5");
 
             pDiv1.innerHTML = array[cnt][flg - 1];
             pDiv2.innerHTML = array[cnt][flg];
             pDiv3.innerHTML = array[cnt][flg + 1];
             pDiv4.innerHTML = array[cnt][flg + 2];
-            pDiv5.innerHTML = '覚えた　<input type="radio" name="gakunen" value="1" onchange="chagePM()">はい';//ダミー実装
+        
             cnt++;
 
         }
@@ -300,18 +436,9 @@
     };
 
 
-    //////////////////追加/////////////////////
-    function chagePM() {
-        var palam = document.getElementsByName("gakunen");
-        if(palam[0].checked) {
-            console.log("選択された値：", pDiv1.innerText);
-            let data= pDiv1.innerText;
-            document.getElementById("data").value = pDiv1.innerText;
-            document.post.submit();
-        };
-    };
 
-
+    
+   
      
 
 </script>

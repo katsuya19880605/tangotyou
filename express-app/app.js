@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); //trueにするとreq.body.textが配列になる
+app.use(express.urlencoded({ extended: true, limit: '10mb' })); //trueにするとreq.body.textが配列になる
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

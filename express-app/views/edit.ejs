@@ -386,12 +386,13 @@
         let NewTd = ''; //初期化
         //配列に改行コードを追加して、文字列として連結する
         NewTd = newTd_element.join('\n');
-
+        
+        console.log(NewTd);
         //inputタグのvalueに取得した表のデータとファイル名を入れる
         document.getElementById("name").value = fileName;
         document.getElementById("data").value = NewTd;
         //フォームからデータを送る
-        document.post.submit();
+        // document.post.submit();
 
     }
 
