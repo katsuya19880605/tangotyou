@@ -9,7 +9,7 @@ bps,bit per second,ビトゥ　パ　セカンドゥ,ビット毎秒,1
 BSC,Balanced ScoreCard,バランストゥ　スコーカードゥ　,企業や事業、プロジェクトなどの業績を4つの視点から総合的に評価する手法,1
 BYOD,Bring Your Own Device,ブリング　ユ　オウン　ディヴァイズ,私物の情報端末などを持ち込んで業務で利用すること,1
 CAD,Computer Aided Design,［US］コムピュータァ　エイディッド　デザイン,工業製品や建築物などの設計や製図をコンピュータを用いて行うこと,1
-CAM,Computer Aided Manufacturing,［US］コムピュータァ　エイディッド　マニュファクチャリング,工業製品などの製造現場で利用される情報システムおよびソフトウェアの一つ,1
+CAM,Computer Aided Manufacturing,［US］コムピュータァ　エイディッド　マニュファクチャリング,工業製品などの製造現場で利用される情報システムおよびソフトウェアの一つ,0
 CIO,Chief Information Officer,チーフ　インファメイション　［US］オフィサァ,最高情報責任者 / 情報統括役員,1
 CMMI,Capability Maturity Model Integration,ケイパビリティ　マチュリティ　［US］マドゥ　インテグレイション,組織がプロセス改善を行う能力を評価する手法および指標,1
 CPU,Central Processing Unit,セントゥラル　プロウセスィング　ユーニトゥ,中央処理装置,1
@@ -80,7 +80,7 @@ OSS,Open Source Software,アウプン　ソース　［US］ソフトゥウェ�
 PCM,Pulse Code Modulation,パルス　コードゥ　［US］モジュレイション,音声などのアナログ信号をデジタルデータに変換する方式の一つ,1
 PDCA,Plan Do Check Act,プラン　ドゥー　チェク　アクトゥ,計画（Plan）→実行（Do）→評価（Check）→改善（Act）という4段階の活動を繰り返し行なうことで、継続的にプロセスを改善・最適化していく手法,1
 PDM,Product Data Management ,プロダクトゥ　デイタ　マニッジメントゥ,設計や構成に関する情報を一元管理してコスト削減や工期の短縮を図る手法,1
-PER,Price Earnings Ratio ,プライス　アーニングズ　レイシオ,株価収益率,1
+PER,Price Earnings Ratio ,プライス　アーニングズ　レイシオ,株価収益率,0
 PERT,Program Evaluation and Review Technique,プロウグラム　エヴァリュエーション　アンド　リヴュー　テクニーク　,各工程の依存関係を図示して所要期間を見積もったり、重要な工程を見極めたりする手法,1
 PKI,Public Key Infrastructure,パブリク　［US］キィ　インフラストラクチャ（ァ）,公開鍵基盤,1
 PL法,Product Liability,プロダクトゥ　ライアビリティ　,製造物責任法,1
@@ -129,7 +129,7 @@ UPS,Uninterruptible Power Supply,アンインターラプタブル　パワー�
 URL,Uniform Resource Locator,ユーニフォーム　［US］リーソース　ロウケイタ（ァ）,インターネット上に存在するデータやサービスなどの情報資源の位置を記述する標準的な記法,1
 USB,Universal Serial Bus,［US］ユニヴァーサル　スィ（ア）リアル　バス,コンピュータと周辺機器を繋ぐのに用いられるデータ伝送路の標準規格,1
 UTM,Unified Threat Management ,ユーニファイドゥ　スレトゥ　マニッジメントゥ,統合脅威管理,1
-VICS,Vehicle Information and Communication System,ヴィーイクル　インファメイション　アンド　コミューニケイション　システム　,渋滞や交通規制などの道路交通情報を、FM多重放送やビーコンを使ってリアルタイムにカーナビに届けるシステム,1
+VICS,Vehicle Information and Communication System,ヴィーイクル　インファメイション　アンド　コミューニケイション　システム　,渋滞や交通規制などの道路交通情報を、FM多重放送やビーコンを使ってリアルタイムにカーナビに届けるシステム,0
 VoIP,Voice over Internet Protocol,ヴォイス　オーヴァ（ァ）　［US］インタネトゥ　［US］プロウタコル,TCP/IPネットワークを通じて音声通話を行う技術の総称,1
 VPN,Virtual Private Network,ヴァーチュアル　プライヴィトゥ　ネットワーク,仮想プライベートネットワーク,1
 WAF,Web Application Firewall,ウェブ　アプリケイション　ファイアーウォール,Webアプリケーションファイアーウォール,1

@@ -20,6 +20,7 @@ router.get('/', function (req, res, next) {
 
       let opt = {
         cnt_data: '',
+        quantity: '',
         at_data:'',
         file: file,
         fileName: fileNameArray
@@ -71,6 +72,7 @@ router.post('/',function(req, res, next){
 
       //*****データをejsに戻す******************
       let now_cnt =Number(req.body.now_cnt);
+      let quantity =Number(req.body.quantity);
       let str =req.body.S_Data;
       let tmp = str.split("\n");
       let S_Array = [];
@@ -90,10 +92,13 @@ router.post('/',function(req, res, next){
       
       console.log(S_str);
       console.log("now_cnt"+now_cnt);
+      console.log("quantity"+quantity);
+      // console.log("csvFile"+csvFile);
      
 
       let opt = {
         cnt_data: now_cnt,
+        quantity: quantity,
         at_data: S_str,
         file: file,
         fileName: fileNameArray

@@ -59,7 +59,8 @@
             <input type="radio" name="r" id="r1" value="0" onchange="select_radio()"><label for="r1">10問</label>
             <input type="radio" name="r" id="r2" value="1" class="ml-2" onchange="select_radio()"><label
                 for="r2">30問</label>
-            <input type="radio" name="r" id="r3" value="2" class="ml-2" checked onchange="select_radio()"><label
+            <input type="radio" name="r" id="r3" value="2" class="ml-2"  onchange="select_radio()"><label
+           
                 for="r3">全問</label>
         </div>
 
@@ -85,7 +86,9 @@
 
     <!-- 追加 -->
     <form method="POST" name="post">
+       
         <input id="now_cnt" type="hidden" name="now_cnt" value="">
+        <input id="quantity" type="hidden" name="quantity" value="">
         <input id="S_Data" type="hidden" name="S_Data" value="">
         <input id="O_Data" type="hidden" name="O_Data" value="">
     </form>
@@ -93,7 +96,9 @@
    
 
     <!-- personal.jsからデータを受け取って変数に渡す -->
+    
     <script>now_cnt = "<%= cnt_data %>";</script>
+    <script>now_quantity = "<%= quantity %>";</script>
     <script>at_data = "<%= at_data %>";</script>
    
     
@@ -105,8 +110,6 @@
 </body>
 <script>
 
-// console.log("first"+now_cnt);
-console.log("first"+at_data);
 
 
     'use strict';
@@ -121,7 +124,9 @@ console.log("first"+at_data);
     let reset_flg = false;
     //追加
     let allDataArray = [];
+    let csvFile='';
 
+    let FL=0;
     let fileInput = document.getElementById("01");
     // let elements = document.getElementsByName("r");
     let elements;
@@ -142,9 +147,31 @@ console.log("first"+at_data);
 
     let sts_flg=1; //追加
 
+    // if(now_quantity==''){
+        // elements = document.getElementById("target");
+        // elements.options[1].selected = true;
+        // console.log(elements[1]);
+
 
     getCSV();
-    
+
+    //問題数ラジオ設定
+    if(now_quantity==''){
+        elements = document.getElementsByName("r");
+        elements[2].checked = true ;
+    }else{
+        elements = document.getElementsByName("r");
+        if(now_quantity==10){
+            elements[0].checked = true ;
+        }else if(now_quantity==30){
+            elements[1].checked = true ;
+        }else{
+            elements[2].checked = true ;
+        };
+    };
+
+
+
     //*****************************************************************
     //読み込むファイルを選択したらcsv読み込み
     //*****************************************************************
@@ -162,7 +189,7 @@ console.log("first"+at_data);
     function getCSV() {
 
         if(at_data ==''){
-            let csvFile = "";
+            csvFile = "";
             for (var i = 0, l = fileElements.length; l > i; i++) {
                 if (fileElements[i].selected) {
                     csvFile = fileElements[i].value
@@ -176,11 +203,10 @@ console.log("first"+at_data);
                 convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
                 shufle(array);
             }
-
+            
         //ステータス変更後、戻りデータがある場合
         }else{
-            console.log("back");
-            console.log("second"+at_data);
+            
             let csvFile = "";
             for (var i = 0, l = fileElements.length; l > i; i++) {
                 if (fileElements[i].selected) {
@@ -199,7 +225,7 @@ console.log("first"+at_data);
         }
     }
 
-    
+   
     //*****************************************************************
     // convertCSVtoArray() 読み込んだCSVデータを二次元配列に変換する関数 
     //*****************************************************************
@@ -208,26 +234,23 @@ console.log("first"+at_data);
         let tmp = str.split("\n");
         allDataArray = [];
         array = [];
+
         for (let i = 0; i < tmp.length; ++i) {
             allDataArray[i] = tmp[i].split(',');
             tmp[i] = tmp[i].replace(/\r/g, '');
             array[i] = tmp[i].split(',');
             array[i].push(i+"\n");
         }
-        // console.log(array);
-
+        
         for (let i = 0; i < array.length; ++i) {
             if(array[i][4] == 0){
                 array.splice(i,1)
                 --i;
             }     
         } 
-        // console.log(array);
-
+     
         quantity = array.length;
         pcnt.innerText = 0 + '問目／' + quantity + '問';
-        console.log(quantity);
-        
 
     }
 
@@ -236,13 +259,10 @@ console.log("first"+at_data);
     //*****************************************************************
     //* 読み込んだCSVデータが文字列として渡される
     function BacktoArray(str, at_data, now_cnt) {
-        console.log("3th"+at_data);
         let tmp = str.split("\n");
         let at_data2 = at_data.split("\n");
         at_data2.pop() ; //最後の空白行を消去
         
-        console.log(at_data2);
-
 
         allDataArray = [];
         for (let i = 0; i < tmp.length; ++i) {
@@ -255,14 +275,26 @@ console.log("first"+at_data);
             array[i][5] = array[i][5]+"\r";
         }
 
-       
-        console.log("now_cnt→"+now_cnt);
-        console.log(array);
         cnt=Number(now_cnt)+1;
 
-        quantity = array.length;
+        elements = document.getElementsByName("r");
+        for (var i = elements.length; i--;) {
+            if (elements[i].checked) {
+                switch (elements[i].value) {
+                    case "0":
+                        quantity = 10;
+                        break;
+                    case "1":
+                        quantity = 30;
+                        break;
+                    case "2":
+                        quantity = array.length;
+                        break;
+                }
+            }
+        }
+
         pcnt.innerText = cnt+1 + '問目／' + quantity + '問';
-        console.log(quantity);
         sts_flg=0;
         
     }
@@ -305,13 +337,7 @@ console.log("first"+at_data);
         disabled_release.disabled = true;      //backボタンの無効化
         disparea.classList.add('disparea');
         shufle(array);
-        // console.log(array);
-
-        if(now_cnt!=0){
-            cnt = now_cnt;
-        }else{
-            cnt = 0;    //ラジオボタン選択時にカウントを初期化する
-        }
+        cnt = 0;    //ラジオボタン選択時にカウントを初期化する
         pcnt.innerText = cnt + '問目／' + quantity + '問';
     }
 
@@ -339,14 +365,7 @@ console.log("first"+at_data);
     // changeText() ボタンを押されたら表示を変える関数 
     //*****************************************************************
     function changeText() {
-
-        // if(now_cnt!=''){
-        //         cnt=now_cnt;
-        //         console.log("changeText_cnt="+cnt);
-        //     }
-
-        disparea.classList.remove('disparea');
-
+       
         /*終了時の処理 問題が最後まで終わったら最初から繰り返す*/
         if (reset_flg) {
             let answer = confirm('You もう1回やっちゃいなよ ( ´⊿`)y-~~');
@@ -382,10 +401,7 @@ console.log("first"+at_data);
         /*終了時の処理　ここまで*/
 
 
-
-
         flg = flg ^ 1;  //フラグのスイッチXOR
-        console.log("flg="+flg);
         if (flg == 0) {
 
 
@@ -393,8 +409,6 @@ console.log("first"+at_data);
             
             if(cnt>0 && sts_flg==1){
                 let sts = document.getElementById("sts");
-                // console.log("sts.checked="+sts.checked);
-
                 if(sts.checked){
                     //変更するナンバを取得
                     let edit_cnt=Number(array[cnt-1][flg + 5]);
@@ -407,8 +421,6 @@ console.log("first"+at_data);
                         let array_row = rowvals.join(",");
                         Sct_Data += array_row;
                     });
-                    // console.log("now_cnt"+now_cnt);
-                    // console.log(Sct_Data);
 
 
                     let Org_Data ="";
@@ -416,37 +428,27 @@ console.log("first"+at_data);
                         let row = rowvals.join(",");
                         Org_Data += row;
                     });
-                    // console.log(Org_Data);
-
-                    //チェックボックス非表示
-                    // pDiv5 = document.getElementById("textdiv_5");
-                    // pDiv5.innerHTML = "";
-                    // sts_flg=1;
-                    //シャッフル後のデータ
+                    
+                
+               
+                    // document.getElementById("csvFile").value=csvFile;
                     document.getElementById("now_cnt").value=now_cnt;
-                    //シャッフル後のデータ
+                    document.getElementById("quantity").value=quantity;
                     document.getElementById("S_Data").value=Sct_Data;
-                    //元データ
                     document.getElementById("O_Data").value=Org_Data;
                    
                     document.post.submit();
                 };
             };
 
-            console.log("cnt++"+cnt);
             disparea.textContent = array[cnt][flg];
             disparea.classList.add('disparea');
             pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
         } else {
 
            
-
-
-
             disparea.innerHTML = '<div class="py-3"><h2 id="textdiv_1" class="text-center">　</h2><p class="border-bottom text-center"><span id="textdiv_2">　</span></p><p class="border-bottom text-center"><span id="textdiv_3">　</span></p><p class="border-bottom text-center"><span id="textdiv_4">　</span></p></div><div id="textdiv_5" class="check"></div>';
-                // <p class="border-bottom text-center"><span id="textdiv_5">　</span></p>
-
-                //<div class="check"><input type="checkbox" id="sts" value="1">覚えた</div>
+            
                 
             disparea.classList.remove('disparea');
 
@@ -461,6 +463,12 @@ console.log("first"+at_data);
             pDiv3.innerHTML = array[cnt][flg + 1];
             pDiv4.innerHTML = array[cnt][flg + 2];
             pDiv5.innerHTML = "<input type='checkbox' id='sts' value='1'>覚えた";
+
+            if(array[cnt][flg + 3]==0){
+                document.getElementById("sts").checked = true;
+                $('#sts').prop('disabled', true);//チェックボックス無効化
+            };
+            
         
             cnt++;
             sts_flg=1;
