@@ -3,7 +3,7 @@ var router = express.Router();
 var mysql =require('mysql');  //追加
 
 
-//MySQLの設定情報
+//MySQLの設定情報 MAMP用
 // var mysql_setting = {
 //     host : 'localhost',
 //     user : 'tangouser',
@@ -20,6 +20,7 @@ var mysql =require('mysql');  //追加
 //     database: 'heroku_8359ae4e95655d7'
 // };
 
+//HEROKU用
 var mysql_setting = {
     host : 'us-cdbr-east-02.cleardb.com',
     user: "bc6ad563b3e02b",
