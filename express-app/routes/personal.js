@@ -19,6 +19,7 @@ router.get('/', function (req, res, next) {
     };
 
       let opt = {
+        fname_cnt: '',
         cnt_data: '',
         quantity: '',
         at_data:'',
@@ -57,10 +58,11 @@ router.post('/',function(req, res, next){
         
 
         //*****ファイルを書き込む******************
+        let fname_cnt = req.body.fname_cnt;
         let O_Data = req.body.O_Data;
-        // console.log(O_Data);
-
-        fs.writeFile('public/csv/'+file , O_Data , (err) => {
+    
+        console.log("fname_cnt＝"+fname_cnt);
+        fs.writeFile('public/csv/'+file[fname_cnt] , O_Data , (err) => {
           if (err) {
               console.log("エラーが発生しました。" + err);
               throw err
@@ -81,22 +83,17 @@ router.post('/',function(req, res, next){
         S_Array[i] = tmp[i].split(',');
       }
 
-      // console.log(tmp);
 
       let S_str = '';
       S_Array.forEach(function(rowvals) {
           let row = rowvals.join(",");
           S_str  += row;
       });
-     
-      
-      console.log(S_str);
-      console.log("now_cnt"+now_cnt);
-      console.log("quantity"+quantity);
-      // console.log("csvFile"+csvFile);
+    
      
 
       let opt = {
+        fname_cnt: fname_cnt,
         cnt_data: now_cnt,
         quantity: quantity,
         at_data: S_str,

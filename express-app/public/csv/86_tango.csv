@@ -6,18 +6,18 @@ BI,Business Intelligence,ビジネス　インテリジェンス,企業の情報
 BPO,Business Process Outsourcing,ビジネス　［US］《名》プラセス　アウトゥソースィング,自社の業務プロセスをまとまった単位で継続的に外部の専門的な企業に委託すること,1
 BPR,Business Process Reengineering,ビジネス　［US］《名》プラセス　リエンジニアリング,企業などで既存の業務の構造を抜本的に見直し、業務の流れを最適化する観点から再構築すること,1
 bps,bit per second,ビトゥ　パ　セカンドゥ,ビット毎秒,1
-BSC,Balanced ScoreCard,バランストゥ　スコーカードゥ　,企業や事業、プロジェクトなどの業績を4つの視点から総合的に評価する手法,1
+BSC,Balanced ScoreCard,バランストゥ　スコーカードゥ　,企業や事業、プロジェクトなどの業績を4つの視点から総合的に評価する手法,0
 BYOD,Bring Your Own Device,ブリング　ユ　オウン　ディヴァイズ,私物の情報端末などを持ち込んで業務で利用すること,1
 CAD,Computer Aided Design,［US］コムピュータァ　エイディッド　デザイン,工業製品や建築物などの設計や製図をコンピュータを用いて行うこと,1
 CAM,Computer Aided Manufacturing,［US］コムピュータァ　エイディッド　マニュファクチャリング,工業製品などの製造現場で利用される情報システムおよびソフトウェアの一つ,1
 CIO,Chief Information Officer,チーフ　インファメイション　［US］オフィサァ,最高情報責任者 / 情報統括役員,1
 CMMI,Capability Maturity Model Integration,ケイパビリティ　マチュリティ　［US］マドゥ　インテグレイション,組織がプロセス改善を行う能力を評価する手法および指標,1
 CPU,Central Processing Unit,セントゥラル　プロウセスィング　ユーニトゥ,中央処理装置,1
-CRM,Customer Relationship Management,カスタマ　リレイションシプ　マニッジメントゥ,顧客管理システム,1
+CRM,Customer Relationship Management,カスタマ　リレイションシプ　マニッジメントゥ,顧客管理システム,0
 CSF,Critical Success Factors,クリティカル　サクセス　ファクター,主要成功要因。Key Success Factor（KSF）,1
-CSR,Corporate Social Responsibility,コーポレイトゥ　ソーシャル　［US］リスパンサビラティ,企業が社会に与える影響について責任を持ち、社会の持続的発展のために貢献すべきとする考え方,1
+CSR,Corporate Social Responsibility,コーポレイトゥ　ソーシャル　［US］リスパンサビラティ,企業が社会に与える影響について責任を持ち、社会の持続的発展のために貢献すべきとする考え方,0
 CSS,Cascading Style Sheets,カスケード　スタイル　シート,Webページの要素の配置や見栄えなどを記述するための言語,1
-DDoS攻撃,Distributed Denial Of Service,ディストゥリビューティドゥ　デナイアル　オ　サーヴィス,インターネット上の多数の機器から特定のネットワークやコンピュータに一斉に接続要求を送信し、過剰な負荷をかけて機能不全に追い込む攻撃手法,1
+DDoS攻撃,Distributed Denial Of Service,ディストゥリビューティドゥ　デナイアル　オ　サーヴィス,インターネット上の多数の機器から特定のネットワークやコンピュータに一斉に接続要求を送信し、過剰な負荷をかけて機能不全に追い込む攻撃手法,0
 DFD,Data Flow Diagram,デイタ　フロー　ダイアグラム,要素間のデータの流れを表した図,1
 DHCP,Dynamic Host Configuration Protocol,ダイナミク　ホウストゥ　コンフィギュレイション　［US］プロウタコル,IPアドレスなど必要な情報を自動的に割り当てるプロトコル,1
 DMZ,DeMilitarized Zone,デ　ミリタライズド　ゾーン　,外部と内部の両ネットワークの中間に設けられたネットワーク領域。非武装地帯,1
@@ -27,27 +27,27 @@ dpi,dots per inch,ドッツ　パー　インチ,プリンタやイメージス�
 DRAM,Dynamic Random Access Memory,ダイナミク　ランダム　アクセス　メモリィ,通電をやめると記憶が失われる揮発性の半導体メモリ。コンピュータの主記憶装置,1
 DRM,Digital Rights Management,ディズィトゥ　ライトゥ　マネジメント,デジタル著作権管理,1
 EA,Enterprise Architecture ,エンタープライズ　［US］アーカテクチャァ　,組織運営の基本理念,1
-EC,Electronic Commerce ,［US］イレクトゥラニク　［US］カマース　,電子商取引,1
+EC,Electronic Commerce ,［US］イレクトゥラニク　［US］カマース　,電子商取引,0
 ECC,Error Check and Correct ,エラ（ァ）　チェク　アンド　コレクトゥ,誤り訂正符号,1
 E-R図,Entity Relationship Diagram,エンティーティ　リレイションシプ　ダイアグラム,実体関連図。実体（entity）、関連（relationship）、属性（attribute）の三要素で構成された図,1
 ERP,Enterprise Resource Planning,エンタープライズ　［US］リーソース　プランニング,企業の持つ資金や人材、設備、資材、情報など様々な資源を統合的に管理・配分し、業務の効率化や経営の全体最適を目指す手法,1
-EVM,Earned Value Management ,アーンド　バリュー　マネジメント,アーンドバリュー分析。進捗状況の把握・管理をEV（Earned Value：アーンドバリュー、出来高）という概念で把握する,1
+EVM,Earned Value Management ,アーンド　バリュー　マネジメント,アーンドバリュー分析。進捗状況の把握・管理をEV（Earned Value：アーンドバリュー、出来高）という概念で把握する,0
 FIFO,First In First Out,ファーストゥ　イ　ファーストゥ　アウト,先入先出,1
 FTP,File Transfer Protocol,ファイル　トゥランスファァ　［US］プロウタコル,TCP/IPネットワークでファイル転送を行うことができるプロトコル,1
-FTTH,Fiber To The Home,ファイバ（ァ）　トゥ　ザ　ホーム,光ファイバーによる家庭向けのデータ通信サービス,1
-GPS,Global Positioning System,［US］グロウバル　ポズィショニン　スィスタム,人工衛星を利用して自分が地球上のどこにいるのかを正確に割り出すシステム,1
+FTTH,Fiber To The Home,ファイバ（ァ）　トゥ　ザ　ホーム,光ファイバーによる家庭向けのデータ通信サービス,0
+GPS,Global Positioning System,［US］グロウバル　ポズィショニン　スィスタム,人工衛星を利用して自分が地球上のどこにいるのかを正確に割り出すシステム,0
 HaaS,Hardware as a Service ,［US］ハードゥウェァ　アズ　レベル】1　サーヴィス,ハードウエア利用提供サービス,1
 HDMI,High-Definition Multimedia Interface,ハイ　デフィニション　マルティーミーディア　インターフェース,映像や音声をデジタル信号として伝送するインターフェース規格の一つ。直接デジタルデータとして伝送するため、伝送途上で品質が劣化することがない,1
 HRM,Human Resource Management ,［US］ヒュマン　［US］リーソース　マニッジメントゥ,人的資源管理,1
 HTML,HyperText Markup Language,ハイパテクストゥ　マーカ　ラングウェジ,Webページを記述するためのマークアップ言語,1
-HTTP,Hyper Text Transfer Protocol,ハイパ（ァ）　テキストゥ　トゥランスファァ　［US］プロウタコル,WebサーバとWebクライアントの間でデータの送受信を行うために用いられるプロトコル,1
+HTTP,Hyper Text Transfer Protocol,ハイパ（ァ）　テキストゥ　トゥランスファァ　［US］プロウタコル,WebサーバとWebクライアントの間でデータの送受信を行うために用いられるプロトコル,0
 IDS,Intrusion Detection System ,イントルージョン　ディテクション　スィスタム,侵入検知システム。不正なアクセスを検知して管理者にメールなどで通報するシステム,1
 IEEE,Institute of Electrical and Electronic Engineers,インスチチュートゥ　オ　イレクトリカル　アンド　［US］イレクトゥラニク　エンジニア,工業技術の標準化団体,1
 IMAP,Internet Message Access Protocol,［US］インタネトゥ　メセジ　アクセス　［US］プロウタコル,電子メールを受信するためのプロトコル,1
-IoT,Internet of Things,［US］インタネトゥ　オブ　シングス,様々な物体に通信機能を持たせ、インターネットに接続したり自動認識や自動制御、遠隔計測などを行うこと,1
+IoT,Internet of Things,［US］インタネトゥ　オブ　シングス,様々な物体に通信機能を持たせ、インターネットに接続したり自動認識や自動制御、遠隔計測などを行うこと,0
 IPO,Initial Public Offering,イニシャル　パブリク　オファリング,未上場企業が新規に株式を証券取引所に上場し、投資家に株式を取得させること,1
 IPS,Intrusion Prevention System ,イントルージョン　プリヴェンション　スィスタム,侵入防止システム。サーバやネットワークの外部との通信を監視し、侵入の試みなど不正なアクセスを検知して攻撃を未然に防ぐシステム,1
-IPv6,Internet Protocol version6,［US］インタネトゥ　［US］プロウタコル　バージョン６,インターネットの基礎となる通信規約プロトコル。枯渇が近いIPv4と比べて利用できるアドレス総数が多く事実上無限にあり、セキュリティ機能の強化や転送効率の向上などがなされている,1
+IPv6,Internet Protocol version6,［US］インタネトゥ　［US］プロウタコル　バージョン６,インターネットの基礎となる通信規約プロトコル。枯渇が近いIPv4と比べて利用できるアドレス総数が多く事実上無限にあり、セキュリティ機能の強化や転送効率の向上などがなされている,0
 IrDA,Infrared Data Association ,インフラレドゥ　デイタ　アソウスィエイション,赤外線通信規格,1
 ISMS,Information Security Management System,インファメイション　［US］スィキュ（ー）リティ　マニッジメントゥ　スィスタム,組織内での情報の取り扱いについて、機密性、完全性、可用性を一定の水準で確保するための仕組み,1
 ISO,International Organization for Standardization,インターナショナル　オーガナイゼイション　［US］ファァ　スタンダァダゼイショ,国際標準化機構,1
@@ -56,9 +56,9 @@ ITIL,Information Technology Infrastructure Library,インファメイション�
 ITS,Intelligent Transport Systems ,インテリジェントゥ　トゥランスポートゥ　システムズ,高度道路交通システム,1
 JANコード,Japanese Article Number,ジャパニーズ　アーティクル　ナンバー,日本工業規格（JIS）に定められている、商品識別番号とバーコードの規格,1
 JIS,Japanese Industrial Standards,ジャパニーズ　インダストリアル　スタンダーズ,日本工業規格,1
-KPI,Key Performance Indicators,［US］キィ　［US］パァフォァマンス　インジケーター,重要業績評価指標,1
+KPI,Key Performance Indicators,［US］キィ　［US］パァフォァマンス　インジケーター,重要業績評価指標,0
 LRU,Least Recently Used,リースト　リースントゥリィ　ユーズ,最も過去に使用されたものから順に破棄する方式,1
-LTE,Long Term Evolution,［US］ラング　ターム　エヴォリューション,4G,1
+LTE,Long Term Evolution,［US］ラング　ターム　エヴォリューション,4G,0
 M＆A,Merger ＆ Acquisition,マージャ（ァ）　アンド　アクイジション,企業の合併買収のこと。Mergers（合併）and Acquisitions（買収）,1
 MBO,Management BuyOut,マニッジメントゥ　バイアウトゥ　,企業買収の類型の一つで、その企業の経営陣が株式の過半を取得して買収すること。また、子会社や事業部門の幹部が本社からその事業を買い取って独立すること,1
 MDM,Mobile Device Management,《名》モウビール　ディヴァイズ　マニッジメントゥ,携帯情報端末のシステム設定などを統合的・効率的に管理する手法,1
@@ -66,32 +66,32 @@ MIDI,Musical Instrument Digital Interface,［US］ミュズィカル　インス
 MIME,Multipurpose Internet Mail Extension,マルティパーパス　［US］インタネトゥ　メイル　イクステンション,Webサーバとブラウザの間でやり取りされるデータのファイル形式。主に電子メールで使われる。,1
 MOT,Management Of Technology,マニッジメントゥ　オブ　テクノロジィ,技術の研究・開発や継続的なイノベーションを中心とした経営管理の手法,1
 MP3,MPEG Audio Layer 3,MPEG　オーディオ　レイヤー　3,音声データを圧縮する方式およびファイル形式の一つ,1
-MRP,Material Requirements Planning,マティアリアル　リクワイアメンツ　プランニング,生産計画に基いて部品表と在庫情報から発注すべき資材の量と時期を決定する方式,1
+MRP,Material Requirements Planning,マティアリアル　リクワイアメンツ　プランニング,生産計画に基いて部品表と在庫情報から発注すべき資材の量と時期を決定する方式,0
 MTBF,Mean Time Between Failures,ミーン　タイム　ビトイーン　［US］フェイリャァズ,平均故障間隔,1
 MTTR,Mean Time To Repair,ミーン　タイム　トゥ　［US］リペァ,平均復旧時間,1
 MVNO,Mobile Virtual Network Operator,《名》モウビール　ヴァーチュアル　ネットワーク　［US］アパレイタァ,仮想移動体通信事業者,1
-NAS,Network Attached Storage,ネットワーク　アタッチトゥ　［US］ストリジ,ネットワークに直接接続し、コンピュータなどからネットワークを通じてアクセスできる外部記憶装置,1
+NAS,Network Attached Storage,ネットワーク　アタッチトゥ　［US］ストリジ,ネットワークに直接接続し、コンピュータなどからネットワークを通じてアクセスできる外部記憶装置,0
 NAT,Network Address Translation,ネットワーク　アドゥレス　［US］トゥランスレイション,ネットワークアドレス変換,1
-NDA,Non Disclosure Agreement,ノン　ディスクロージャー　アグリーメント,秘密保持契約,1
+NDA,Non Disclosure Agreement,ノン　ディスクロージャー　アグリーメント,秘密保持契約,0
 NFC,Near Field Communication,ニア　フィールドゥ　コミューニケイション,至近距離で無線通信を行う技術,1
 OJT,On the Job Training,［US］オン　ザ　［US］ジャブ　トゥレイニング,実際の業務を行なう中で必要な知識や技能を身につけさせていく方式,1
 OS,Operating System,オパレイティング　スィスタム　,システム全体を管理する基本的なソフトウェア,1
-OSS,Open Source Software,アウプン　ソース　［US］ソフトゥウェァ,誰でも無償で自由に使用、複製、改変、再配布できるように公開されたソフトウェア,1
+OSS,Open Source Software,アウプン　ソース　［US］ソフトゥウェァ,誰でも無償で自由に使用、複製、改変、再配布できるように公開されたソフトウェア,0
 PCM,Pulse Code Modulation,パルス　コードゥ　［US］モジュレイション,音声などのアナログ信号をデジタルデータに変換する方式の一つ,1
 PDCA,Plan Do Check Act,プラン　ドゥー　チェク　アクトゥ,計画（Plan）→実行（Do）→評価（Check）→改善（Act）という4段階の活動を繰り返し行なうことで、継続的にプロセスを改善・最適化していく手法,1
-PDM,Product Data Management ,プロダクトゥ　デイタ　マニッジメントゥ,設計や構成に関する情報を一元管理してコスト削減や工期の短縮を図る手法,1
+PDM,Product Data Management ,プロダクトゥ　デイタ　マニッジメントゥ,設計や構成に関する情報を一元管理してコスト削減や工期の短縮を図る手法,0
 PER,Price Earnings Ratio ,プライス　アーニングズ　レイシオ,株価収益率,1
-PERT,Program Evaluation and Review Technique,プロウグラム　エヴァリュエーション　アンド　リヴュー　テクニーク　,各工程の依存関係を図示して所要期間を見積もったり、重要な工程を見極めたりする手法,1
-PKI,Public Key Infrastructure,パブリク　［US］キィ　インフラストラクチャ（ァ）,公開鍵基盤,1
-PL法,Product Liability,プロダクトゥ　ライアビリティ　,製造物責任法,1
+PERT,Program Evaluation and Review Technique,プロウグラム　エヴァリュエーション　アンド　リヴュー　テクニーク　,各工程の依存関係を図示して所要期間を見積もったり、重要な工程を見極めたりする手法,0
+PKI,Public Key Infrastructure,パブリク　［US］キィ　インフラストラクチャ（ァ）,公開鍵基盤,0
+PL法,Product Liability,プロダクトゥ　ライアビリティ　,製造物責任法,0
 PMBOK,Project Management Body Of Knowledge ,［US］《動》プロウジェクトゥ　マニッジメントゥ　バディー　オブ　ナレッジ　,プロジェクトマネジメント知識体系,1
 PoE,Power over Ethernet,［US］パウアァ　オーヴァ（ァ）　イーサネット,LANケーブル等で電力を供給する仕様,1
 POP,Post Office Protocol,ポウストゥ　［US］オフィス　［US］プロウタコル,電子メールを受信するための通信規約プロトコル,1
 POS,Point Of Sale,ポイントゥ　オブ　セイル,販売時点情報管理,1
-PPM,Products Portfolio Management,プロダクツ　ポートフォリオ　マネジメント,製品ポートフォリオ管理,1
+PPM,Products Portfolio Management,プロダクツ　ポートフォリオ　マネジメント,製品ポートフォリオ管理,0
 QRコード,Quick Response code,クイク　［US］リスパンス　コードゥ,データを図形パターンで表すことができる2次元コードの方式,1
 RAID,Redundant Arrays of Inexpensive Disks,リダンダントゥ　アレイズ　オブ　インエクスペンシヴ　ディスクズ　,外部記憶装置を複数台まとめて一台の装置として管理する技術,1
-RDB,Relational Database,リレイショナル　デイタベイス　,関係データベース,1
+RDB,Relational Database,リレイショナル　デイタベイス　,関係データベース,0
 RFID,Radio Frequency IDentification,レイディオゥ　フリークウェンスィ　アイデンティフィケーション,ICタグと無線通信することで個体識別や所在管理、移動追跡などを行う仕組み,1
 RFM,Recency Frequency Monetary,リーセンスィ　フリークウェンスィ　［US］マネタリィ,顧客の購買履歴の分析手法。最終購入日（Recency）、購入頻度（Frequency）、購入額（Monetary）,1
 RFP,Request For Proposal,リクウェストゥ　［US］ファァ　プロポーザル,提案依頼書,1
@@ -104,10 +104,10 @@ SaaS,Software as a Service,［US］ソフトゥウェァ　アズ　レベル】
 SCM,Supply Chain Management,サプライ　チェイン　マニッジメントゥ,受発注や在庫、販売、物流などの情報を共有し、流通の全体最適化を図る管理手法,1
 SCSI,Small Computer System Interface ,［US］スモル　［US］コムピュータァ　スィスタム　インタフェイス,周辺機器とのパラレル接続規格,1
 SEO,Search Engine Optimization,サーチ　エンジン　オプタマゼイショ,検索結果リストの上位に表示させるために様々な工夫を行うこと,1
-SFA,Sales Force Automation,セイル　［US］フォァス　［US］オタメイション,営業活動を支援して効率化するもの,1
+SFA,Sales Force Automation,セイル　［US］フォァス　［US］オタメイション,営業活動を支援して効率化するもの,0
 SIM,Subscriber Identity Module,サブスクライバ（ァ）　アイデンティーティ　［US］モジュール,識別情報などが記録されたICカード,1
 SLA,Service Level Agreement,サーヴィス　レヴル　アグリーメントゥ,サービスレベル合意書,1
-SLCP,Software Life Cycle Process,［US］ソフトゥウェァ　ライフ　サイクル　［US］《名》プラセス,ソフトウェアの構想・設計から開発、導入、運用、保守、破棄に到るまでの工程全体,1
+SLCP,Software Life Cycle Process,［US］ソフトゥウェァ　ライフ　サイクル　［US］《名》プラセス,ソフトウェアの構想・設計から開発、導入、運用、保守、破棄に到るまでの工程全体,0
 S/MIME,Secure MIME,［US］スィキュァ　マイム　,電子メールの内容を暗号化したりデジタル署名を付加したりする方式,1
 SMTP,Simple Mail Transfer Protocol,スィムポゥ　メイル　トゥランスファァ　［US］プロウタコル,電子メールを伝送するための通信手順プロトコル,1
 SNS,Social Networking Service,ソーシャル　ネットゥワーキング　サーヴィス,ソーシャルネットワーキングサービス,1
@@ -115,18 +115,18 @@ SOA,Service Oriented Architecture,サーヴィス　オリエンティド　ア�
 SPEC,Standard Performance Evaluation Corporation,スタンダードゥ　［US］パァフォァマンス　エヴァリュエーション　コーポレイション,コンピュータシステムの性能測定する標準的な手法を策定し、測定結果を登録・公表する国際的な非営利団体,1
 SQL,Structured Query Language,ストゥラクチャドゥ　クイアリィ　ラングウェジ,リレーショナルデータベースの管理や操作を行うための問い合わせ言語,1
 SQuBOK,Software Quality Body Of Knowledge ,［US］ソフトゥウェァ　［US］クウォラティ　バディー　オブ　ナレッジ　,ソフトウェアに関する品質保証や品質向上に携わる技術者に求められる知識を体系的にまとめた知識体系,1
-SSD,Solid State Drive,［US］サリドゥ　ステイトゥ　ドゥライヴ,フラッシュメモリを用いる外部記憶装置,1
+SSD,Solid State Drive,［US］サリドゥ　ステイトゥ　ドゥライヴ,フラッシュメモリを用いる外部記憶装置,0
 SSID,Service Set Identifier,サーヴィス　セトゥ　アイデンティファイア（ァ）,無線LAN（Wi-Fi）におけるアクセスポイントの識別名。現在ではESSIDの意味でSSIDという語を使う場合が多い,1
 SSL,Secure Socket Layer,［US］スィキュァ　［US］サキトゥ　レイア（ァ）,IPネットワークでデータを暗号化して送受信するプロトコル,1
 SWOT分析,Strengths Weaknesses Opportunities Threats analysis ,ストレングス　ウィークネス　オポチュニティ　スレトゥ　アナリシス　,強み、弱み、機会、脅威の4項目を軸に外部環境と内部環境の把握・分析すること,1
 TCO,Total Cost of Ownership,トータル　［US］コストゥ　オブ　オーナーシプ,総所有コスト / 総保有コスト,1
-TCP,Transmission Control Protocol,［US］トゥランスミッション　コントゥロウル　［US］プロウタコル,ポート番号で上位層のアプリを判別し、通信相手の状況を確認して接続を確立する信頼性の高いコネクション型のプロトコル,1
+TCP,Transmission Control Protocol,［US］トゥランスミッション　コントゥロウル　［US］プロウタコル,ポート番号で上位層のアプリを判別し、通信相手の状況を確認して接続を確立する信頼性の高いコネクション型のプロトコル,0
 TELNET,TELetype NETwork,テレタイプ　ネットワーク　,TCP/IPネットワークを通じて別のコンピュータにアクセスし、遠隔操作するためのプロトコル,1
-TOB,TakeOver Bid,テークオーヴァ（ァ）　ビドゥ　,上場企業の株式を、買い取り条件を公表して不特定多数の株主から株式市場外で買い付けること,1
+TOB,TakeOver Bid,テークオーヴァ（ァ）　ビドゥ　,上場企業の株式を、買い取り条件を公表して不特定多数の株主から株式市場外で買い付けること,0
 UDP,User Datagram Protocol,ユーザ（ァ）　データグラム　プロトコル,ポート番号で上位層のアプリを判別し、通信相手の状況を確認せずにデータを送り付ける速度を重視したコネクションレス型のプロトコル,1
-UML,Unified Modeling Language,ユーニファイドゥ　［US］マデリング　ラングウェジ,統一モデリング言語,1
+UML,Unified Modeling Language,ユーニファイドゥ　［US］マデリング　ラングウェジ,統一モデリング言語,0
 UPS,Uninterruptible Power Supply,アンインターラプタブル　パワー　サプライ,無停電電源装置,1
-URL,Uniform Resource Locator,ユーニフォーム　［US］リーソース　ロウケイタ（ァ）,インターネット上に存在するデータやサービスなどの情報資源の位置を記述する標準的な記法,1
+URL,Uniform Resource Locator,ユーニフォーム　［US］リーソース　ロウケイタ（ァ）,インターネット上に存在するデータやサービスなどの情報資源の位置を記述する標準的な記法,0
 USB,Universal Serial Bus,［US］ユニヴァーサル　スィ（ア）リアル　バス,コンピュータと周辺機器を繋ぐのに用いられるデータ伝送路の標準規格,1
 UTM,Unified Threat Management ,ユーニファイドゥ　スレトゥ　マニッジメントゥ,統合脅威管理,1
 VICS,Vehicle Information and Communication System,ヴィーイクル　インファメイション　アンド　コミューニケイション　システム　,渋滞や交通規制などの道路交通情報を、FM多重放送やビーコンを使ってリアルタイムにカーナビに届けるシステム,1
@@ -136,5 +136,5 @@ WAF,Web Application Firewall,ウェブ　アプリケイション　ファイア
 WBS,Work Breakdown Structure,［US］ワァク　ブレイクダウン　ストゥラクチャ,作業分解図,1
 WPA,Wi-fi Protected Access,ワイフィ　プロテクティドゥ　アクセス,無線LAN（Wi-Fi）上で通信を暗号化して保護するための技術規格,1
 WWW,World Wide Web,ワールドゥ　ワイドゥ　ウェブ,インターネット上で標準的に用いられている文書の公開・閲覧システム,1
-XML,eXtensible Markup Language,イクステンサブル　マーカ　ラングウェジ,文書やデータの意味や構造を記述するためのマークアップ言語,1
-XSS,Cross Site Scripting,［US］クロス　サイトゥ　スクリプティング,外部から任意のコードを埋め込んで実行できるコードインジェクション攻撃,1
+XML,eXtensible Markup Language,イクステンサブル　マーカ　ラングウェジ,文書やデータの意味や構造を記述するためのマークアップ言語,0
+XSS,Cross Site Scripting,［US］クロス　サイトゥ　スクリプティング,外部から任意のコードを埋め込んで実行できるコードインジェクション攻撃,0

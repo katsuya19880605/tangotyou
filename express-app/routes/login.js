@@ -58,14 +58,14 @@ router.post('/',(req, res, next) => {
                     //IDをセッションのデータに入れる
                     req.session.loginID=loginID;
                     res.redirect('/personal');
-
+                    
                 }else{
                     var data ={
                         message: 'メールアドレスとパスワードが<br>一致しません。'
                     };
                     console.log("NG"+data);
+                    res.render('login.ejs', data);
                 }
-                res.render('login.ejs', data);
             }
          });
          //接続を解除

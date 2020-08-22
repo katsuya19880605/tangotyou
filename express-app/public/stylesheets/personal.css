@@ -92,3 +92,9 @@ header {
     text-align: center;
     font-size: 18px;
 }
+.navbar-brand {
+    background: url("../images/logo2.png") no-repeat left center;
+    background-size: contain;
+    height: 50px;
+    width: 215px;
+}
