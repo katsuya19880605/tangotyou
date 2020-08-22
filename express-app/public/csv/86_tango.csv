@@ -53,7 +53,7 @@ ISMS,Information Security Management System,インファメイション　［US�
 ISO,International Organization for Standardization,インターナショナル　オーガナイゼイション　［US］ファァ　スタンダァダゼイショ,国際標準化機構,1
 ISP,Internet Service Provider,［US］インタネトゥ　サーヴィス　プラヴァイダ（ァ）,インターネットサービスプロバイダ,1
 ITIL,Information Technology Infrastructure Library,インファメイション　テクノロジィ　インフラストラクチャ（ァ）　ライブラリィ,情報システムの運用・管理業務についての体系的なガイドラインの一つ,1
-ITS,Intelligent Transport Systems ,インテリジェントゥ　トゥランスポートゥ　システムズ,高度道路交通システム,1
+ITS,Intelligent Transport Systems ,インテリジェントゥ　トゥランスポートゥ　システムズ,高度道路交通システム,0
 JANコード,Japanese Article Number,ジャパニーズ　アーティクル　ナンバー,日本工業規格（JIS）に定められている、商品識別番号とバーコードの規格,1
 JIS,Japanese Industrial Standards,ジャパニーズ　インダストリアル　スタンダーズ,日本工業規格,1
 KPI,Key Performance Indicators,［US］キィ　［US］パァフォァマンス　インジケーター,重要業績評価指標,1
@@ -64,7 +64,7 @@ MBO,Management BuyOut,マニッジメントゥ　バイアウトゥ　,企業買
 MDM,Mobile Device Management,《名》モウビール　ディヴァイズ　マニッジメントゥ,携帯情報端末のシステム設定などを統合的・効率的に管理する手法,1
 MIDI,Musical Instrument Digital Interface,［US］ミュズィカル　インストゥルメントゥ　ディズィトゥ　インタフェイス,楽曲データの記述、保存、伝送などの方式を定めた標準規格の一つ,1
 MIME,Multipurpose Internet Mail Extension,マルティパーパス　［US］インタネトゥ　メイル　イクステンション,Webサーバとブラウザの間でやり取りされるデータのファイル形式。主に電子メールで使われる。,1
-MOT,Management Of Technology,マニッジメントゥ　オブ　テクノロジィ,技術の研究・開発や継続的なイノベーションを中心とした経営管理の手法,1
+MOT,Management Of Technology,マニッジメントゥ　オブ　テクノロジィ,技術の研究・開発や継続的なイノベーションを中心とした経営管理の手法,0
 MP3,MPEG Audio Layer 3,MPEG　オーディオ　レイヤー　3,音声データを圧縮する方式およびファイル形式の一つ,1
 MRP,Material Requirements Planning,マティアリアル　リクワイアメンツ　プランニング,生産計画に基いて部品表と在庫情報から発注すべき資材の量と時期を決定する方式,1
 MTBF,Mean Time Between Failures,ミーン　タイム　ビトイーン　［US］フェイリャァズ,平均故障間隔,1

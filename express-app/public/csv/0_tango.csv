@@ -23,7 +23,7 @@ DHCP,Dynamic Host Configuration Protocol,ダイナミク　ホウストゥ　コ
 DMZ,DeMilitarized Zone,デ　ミリタライズド　ゾーン　,外部と内部の両ネットワークの中間に設けられたネットワーク領域。非武装地帯,1
 DNS,Domain Name System,ドウメイン　ネイム　スィスタム,IPネットワーク上でドメイン名（ホスト名）とIPアドレスの対応関係を管理するシステム,1
 DOA,Data Oriented Approach,デイタ　オリエンティド　アプローチ,データ中心アプローチ,1
-dpi,dots per inch,ドッツ　パー　インチ,プリンタやイメージスキャナなどで使われる解像度の単位,0
+dpi,dots per inch,ドッツ　パー　インチ,プリンタやイメージスキャナなどで使われる解像度の単位,1
 DRAM,Dynamic Random Access Memory,ダイナミク　ランダム　アクセス　メモリィ,通電をやめると記憶が失われる揮発性の半導体メモリ。コンピュータの主記憶装置,1
 DRM,Digital Rights Management,ディズィトゥ　ライトゥ　マネジメント,デジタル著作権管理,1
 EA,Enterprise Architecture ,エンタープライズ　［US］アーカテクチャァ　,組織運営の基本理念,1
@@ -48,7 +48,7 @@ IoT,Internet of Things,［US］インタネトゥ　オブ　シングス,様々
 IPO,Initial Public Offering,イニシャル　パブリク　オファリング,未上場企業が新規に株式を証券取引所に上場し、投資家に株式を取得させること,1
 IPS,Intrusion Prevention System ,イントルージョン　プリヴェンション　スィスタム,侵入防止システム。サーバやネットワークの外部との通信を監視し、侵入の試みなど不正なアクセスを検知して攻撃を未然に防ぐシステム,1
 IPv6,Internet Protocol version6,［US］インタネトゥ　［US］プロウタコル　バージョン６,インターネットの基礎となる通信規約プロトコル。枯渇が近いIPv4と比べて利用できるアドレス総数が多く事実上無限にあり、セキュリティ機能の強化や転送効率の向上などがなされている,1
-IrDA,Infrared Data Association ,インフラレドゥ　デイタ　アソウスィエイション,赤外線通信規格,0
+IrDA,Infrared Data Association ,インフラレドゥ　デイタ　アソウスィエイション,赤外線通信規格,1
 ISMS,Information Security Management System,インファメイション　［US］スィキュ（ー）リティ　マニッジメントゥ　スィスタム,組織内での情報の取り扱いについて、機密性、完全性、可用性を一定の水準で確保するための仕組み,1
 ISO,International Organization for Standardization,インターナショナル　オーガナイゼイション　［US］ファァ　スタンダァダゼイショ,国際標準化機構,1
 ISP,Internet Service Provider,［US］インタネトゥ　サーヴィス　プラヴァイダ（ァ）,インターネットサービスプロバイダ,1
@@ -66,7 +66,7 @@ MIDI,Musical Instrument Digital Interface,［US］ミュズィカル　インス
 MIME,Multipurpose Internet Mail Extension,マルティパーパス　［US］インタネトゥ　メイル　イクステンション,Webサーバとブラウザの間でやり取りされるデータのファイル形式。主に電子メールで使われる。,1
 MOT,Management Of Technology,マニッジメントゥ　オブ　テクノロジィ,技術の研究・開発や継続的なイノベーションを中心とした経営管理の手法,1
 MP3,MPEG Audio Layer 3,MPEG　オーディオ　レイヤー　3,音声データを圧縮する方式およびファイル形式の一つ,1
-MRP,Material Requirements Planning,マティアリアル　リクワイアメンツ　プランニング,生産計画に基いて部品表と在庫情報から発注すべき資材の量と時期を決定する方式,0
+MRP,Material Requirements Planning,マティアリアル　リクワイアメンツ　プランニング,生産計画に基いて部品表と在庫情報から発注すべき資材の量と時期を決定する方式,1
 MTBF,Mean Time Between Failures,ミーン　タイム　ビトイーン　［US］フェイリャァズ,平均故障間隔,1
 MTTR,Mean Time To Repair,ミーン　タイム　トゥ　［US］リペァ,平均復旧時間,1
 MVNO,Mobile Virtual Network Operator,《名》モウビール　ヴァーチュアル　ネットワーク　［US］アパレイタァ,仮想移動体通信事業者,1
@@ -77,10 +77,10 @@ NFC,Near Field Communication,ニア　フィールドゥ　コミューニケイ
 OJT,On the Job Training,［US］オン　ザ　［US］ジャブ　トゥレイニング,実際の業務を行なう中で必要な知識や技能を身につけさせていく方式,1
 OS,Operating System,オパレイティング　スィスタム　,システム全体を管理する基本的なソフトウェア,1
 OSS,Open Source Software,アウプン　ソース　［US］ソフトゥウェァ,誰でも無償で自由に使用、複製、改変、再配布できるように公開されたソフトウェア,1
-PCM,Pulse Code Modulation,パルス　コードゥ　［US］モジュレイション,音声などのアナログ信号をデジタルデータに変換する方式の一つ,0
+PCM,Pulse Code Modulation,パルス　コードゥ　［US］モジュレイション,音声などのアナログ信号をデジタルデータに変換する方式の一つ,1
 PDCA,Plan Do Check Act,プラン　ドゥー　チェク　アクトゥ,計画（Plan）→実行（Do）→評価（Check）→改善（Act）という4段階の活動を繰り返し行なうことで、継続的にプロセスを改善・最適化していく手法,1
 PDM,Product Data Management ,プロダクトゥ　デイタ　マニッジメントゥ,設計や構成に関する情報を一元管理してコスト削減や工期の短縮を図る手法,1
-PER,Price Earnings Ratio ,プライス　アーニングズ　レイシオ,株価収益率,0
+PER,Price Earnings Ratio ,プライス　アーニングズ　レイシオ,株価収益率,1
 PERT,Program Evaluation and Review Technique,プロウグラム　エヴァリュエーション　アンド　リヴュー　テクニーク　,各工程の依存関係を図示して所要期間を見積もったり、重要な工程を見極めたりする手法,1
 PKI,Public Key Infrastructure,パブリク　［US］キィ　インフラストラクチャ（ァ）,公開鍵基盤,1
 PL法,Product Liability,プロダクトゥ　ライアビリティ　,製造物責任法,1
