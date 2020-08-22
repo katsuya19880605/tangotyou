@@ -65,9 +65,9 @@ MDM,Mobile Device Management,《名》モウビール　ディヴァイズ　マ
 MIDI,Musical Instrument Digital Interface,［US］ミュズィカル　インストゥルメントゥ　ディズィトゥ　インタフェイス,楽曲データの記述、保存、伝送などの方式を定めた標準規格の一つ,1
 MIME,Multipurpose Internet Mail Extension,マルティパーパス　［US］インタネトゥ　メイル　イクステンション,Webサーバとブラウザの間でやり取りされるデータのファイル形式。主に電子メールで使われる。,1
 MOT,Management Of Technology,マニッジメントゥ　オブ　テクノロジィ,技術の研究・開発や継続的なイノベーションを中心とした経営管理の手法,0
-MP3,MPEG Audio Layer 3,MPEG　オーディオ　レイヤー　3,音声データを圧縮する方式およびファイル形式の一つ,1
+MP3,MPEG Audio Layer 3,MPEG　オーディオ　レイヤー　3,音声データを圧縮する方式およびファイル形式の一つ,0
 MRP,Material Requirements Planning,マティアリアル　リクワイアメンツ　プランニング,生産計画に基いて部品表と在庫情報から発注すべき資材の量と時期を決定する方式,1
-MTBF,Mean Time Between Failures,ミーン　タイム　ビトイーン　［US］フェイリャァズ,平均故障間隔,1
+MTBF,Mean Time Between Failures,ミーン　タイム　ビトイーン　［US］フェイリャァズ,平均故障間隔,0
 MTTR,Mean Time To Repair,ミーン　タイム　トゥ　［US］リペァ,平均復旧時間,1
 MVNO,Mobile Virtual Network Operator,《名》モウビール　ヴァーチュアル　ネットワーク　［US］アパレイタァ,仮想移動体通信事業者,1
 NAS,Network Attached Storage,ネットワーク　アタッチトゥ　［US］ストリジ,ネットワークに直接接続し、コンピュータなどからネットワークを通じてアクセスできる外部記憶装置,1

@@ -98,3 +98,7 @@ header {
     height: 50px;
     width: 215px;
 }
+
+.nav-link:hover {
+    opacity: 0.8;
+  }

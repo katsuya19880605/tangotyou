@@ -11,7 +11,7 @@ router.get('/',function(req, res, next){
     var msg = 'email：' + email;
     res.render('add', 
     {
-        title: 'アカウントを作成しました。',
+        title: "アカウントを作成しました。",
         message:msg
     });
 });

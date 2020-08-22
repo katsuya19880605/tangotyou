@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content=" 5; url=./login">
+    <title>NewAccount</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+        .dt_link {
+            color: white;
+        }
+
+        .dt_link:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
- 
+
 <body>
-    <div class="newAccount">
-        <h2><%= title %></h2>
-        <p id="msg" class="h5"><%- message %></p>
-        <p><a href="/" class="dt_link">5秒後にトップページに移動します。</a></p>
+    <div class="main">
+        <div class="newAccount">
+            <h2><%= title %></h2>
+            <p id="msg" class="h5"><%- message %></p>
+            <p><a href="/" class="dt_link">5秒後にトップページに移動します。</a></p>
+        </div>
     </div>
 
 </body>
+
 </html>

@@ -40,7 +40,7 @@ HaaS,Hardware as a Service ,［US］ハードゥウェァ　アズ　レベル�
 HDMI,High-Definition Multimedia Interface,ハイ　デフィニション　マルティーミーディア　インターフェース,映像や音声をデジタル信号として伝送するインターフェース規格の一つ。直接デジタルデータとして伝送するため、伝送途上で品質が劣化することがない,1
 HRM,Human Resource Management ,［US］ヒュマン　［US］リーソース　マニッジメントゥ,人的資源管理,1
 HTML,HyperText Markup Language,ハイパテクストゥ　マーカ　ラングウェジ,Webページを記述するためのマークアップ言語,1
-HTTP,Hyper Text Transfer Protocol,ハイパ（ァ）　テキストゥ　トゥランスファァ　［US］プロウタコル,WebサーバとWebクライアントの間でデータの送受信を行うために用いられるプロトコル,1
+HTTP,Hyper Text Transfer Protocol,ハイパ（ァ）　テキストゥ　トゥランスファァ　［US］プロウタコル,WebサーバとWebクライアントの間でデータの送受信を行うために用いられるプロトコル,0
 IDS,Intrusion Detection System ,イントルージョン　ディテクション　スィスタム,侵入検知システム。不正なアクセスを検知して管理者にメールなどで通報するシステム,1
 IEEE,Institute of Electrical and Electronic Engineers,インスチチュートゥ　オ　イレクトリカル　アンド　［US］イレクトゥラニク　エンジニア,工業技術の標準化団体,1
 IMAP,Internet Message Access Protocol,［US］インタネトゥ　メセジ　アクセス　［US］プロウタコル,電子メールを受信するためのプロトコル,1
@@ -94,7 +94,7 @@ RAID,Redundant Arrays of Inexpensive Disks,リダンダントゥ　アレイズ�
 RDB,Relational Database,リレイショナル　デイタベイス　,関係データベース,1
 RFID,Radio Frequency IDentification,レイディオゥ　フリークウェンスィ　アイデンティフィケーション,ICタグと無線通信することで個体識別や所在管理、移動追跡などを行う仕組み,1
 RFM,Recency Frequency Monetary,リーセンスィ　フリークウェンスィ　［US］マネタリィ,顧客の購買履歴の分析手法。最終購入日（Recency）、購入頻度（Frequency）、購入額（Monetary）,1
-RFP,Request For Proposal,リクウェストゥ　［US］ファァ　プロポーザル,提案依頼書,1
+RFP,Request For Proposal,リクウェストゥ　［US］ファァ　プロポーザル,提案依頼書,0
 RGB,Red Green Blue,レドゥ　［US］グリン　ブルー,赤（Red）、緑（Green）、青（Blue）の配合比率を変化させて、すべての色を表現する方式,1
 ROE,Return On Equity,リターン　［US］オン　エクイティ,自己資本利益率,1
 ROI,Return On Investment,リターン　［US］オン　インヴェストゥメントゥ,投資対効果,1

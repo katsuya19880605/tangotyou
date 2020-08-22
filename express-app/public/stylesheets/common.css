@@ -12,23 +12,25 @@ header {
     height: 280px;
 }
 
-.btn-color{
+.btn-color {
     border-width: 3px;
     color: deepskyblue;
     border-color: deepskyblue;
 }
-.btn-color:hover{
+
+.btn-color:hover {
     color: #fff;
     background-color: deepskyblue;
     border-color: deepskyblue;
 }
 
-.btn-color2{
+.btn-color2 {
     border-width: 3px;
     color: dodgerblue;
     border-color: dodgerblue;
 }
-.btn-color2:hover{
+
+.btn-color2:hover {
     color: #fff;
     background-color: dodgerblue;
     border-color: dodgerblue;
@@ -39,4 +41,8 @@ header {
     background-size: contain;
     height: 50px;
     width: 215px;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
 }
