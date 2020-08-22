@@ -7,7 +7,7 @@ BPO,Business Process Outsourcing,ビジネス　［US］《名》プラセス　
 BPR,Business Process Reengineering,ビジネス　［US］《名》プラセス　リエンジニアリング,企業などで既存の業務の構造を抜本的に見直し、業務の流れを最適化する観点から再構築すること,1
 bps,bit per second,ビトゥ　パ　セカンドゥ,ビット毎秒,1
 BSC,Balanced ScoreCard,バランストゥ　スコーカードゥ　,企業や事業、プロジェクトなどの業績を4つの視点から総合的に評価する手法,1
-BYOD,Bring Your Own Device,ブリング　ユ　オウン　ディヴァイズ,私物の情報端末などを持ち込んで業務で利用すること,1
+BYOD,Bring Your Own Device,ブリング　ユ　オウン　ディヴァイズ,私物の情報端末などを持ち込んで業務で利用すること,0
 CAD,Computer Aided Design,［US］コムピュータァ　エイディッド　デザイン,工業製品や建築物などの設計や製図をコンピュータを用いて行うこと,1
 CAM,Computer Aided Manufacturing,［US］コムピュータァ　エイディッド　マニュファクチャリング,工業製品などの製造現場で利用される情報システムおよびソフトウェアの一つ,1
 CIO,Chief Information Officer,チーフ　インファメイション　［US］オフィサァ,最高情報責任者 / 情報統括役員,1
@@ -22,7 +22,7 @@ DFD,Data Flow Diagram,デイタ　フロー　ダイアグラム,要素間のデ
 DHCP,Dynamic Host Configuration Protocol,ダイナミク　ホウストゥ　コンフィギュレイション　［US］プロウタコル,IPアドレスなど必要な情報を自動的に割り当てるプロトコル,1
 DMZ,DeMilitarized Zone,デ　ミリタライズド　ゾーン　,外部と内部の両ネットワークの中間に設けられたネットワーク領域。非武装地帯,1
 DNS,Domain Name System,ドウメイン　ネイム　スィスタム,IPネットワーク上でドメイン名（ホスト名）とIPアドレスの対応関係を管理するシステム,1
-DOA,Data Oriented Approach,デイタ　オリエンティド　アプローチ,データ中心アプローチ,1
+DOA,Data Oriented Approach,デイタ　オリエンティド　アプローチ,データ中心アプローチ,0
 dpi,dots per inch,ドッツ　パー　インチ,プリンタやイメージスキャナなどで使われる解像度の単位,0
 DRAM,Dynamic Random Access Memory,ダイナミク　ランダム　アクセス　メモリィ,通電をやめると記憶が失われる揮発性の半導体メモリ。コンピュータの主記憶装置,1
 DRM,Digital Rights Management,ディズィトゥ　ライトゥ　マネジメント,デジタル著作権管理,1
@@ -95,14 +95,14 @@ RDB,Relational Database,リレイショナル　デイタベイス　,関係デ�
 RFID,Radio Frequency IDentification,レイディオゥ　フリークウェンスィ　アイデンティフィケーション,ICタグと無線通信することで個体識別や所在管理、移動追跡などを行う仕組み,1
 RFM,Recency Frequency Monetary,リーセンスィ　フリークウェンスィ　［US］マネタリィ,顧客の購買履歴の分析手法。最終購入日（Recency）、購入頻度（Frequency）、購入額（Monetary）,1
 RFP,Request For Proposal,リクウェストゥ　［US］ファァ　プロポーザル,提案依頼書,0
-RGB,Red Green Blue,レドゥ　［US］グリン　ブルー,赤（Red）、緑（Green）、青（Blue）の配合比率を変化させて、すべての色を表現する方式,1
+RGB,Red Green Blue,レドゥ　［US］グリン　ブルー,赤（Red）、緑（Green）、青（Blue）の配合比率を変化させて、すべての色を表現する方式,0
 ROE,Return On Equity,リターン　［US］オン　エクイティ,自己資本利益率,1
-ROI,Return On Investment,リターン　［US］オン　インヴェストゥメントゥ,投資対効果,1
-RPA,Robotic Process Automation ,［US］ロウバティク　［US］《名》プラセス　［US］オタメイション,ロボットによる業務自動化,1
+ROI,Return On Investment,リターン　［US］オン　インヴェストゥメントゥ,投資対効果,0
+RPA,Robotic Process Automation ,［US］ロウバティク　［US］《名》プラセス　［US］オタメイション,ロボットによる業務自動化,0
 RSS,Really Simple Syndication,リアリィ　スィムポゥ　［US］スィンダケイション,Webサイトの更新情報を配布するためのデータ形式,1
 SaaS,Software as a Service,［US］ソフトゥウェァ　アズ　レベル】1　サーヴィス,ソフトウェアをインターネットを通じて遠隔から利用者に提供する方式,1
 SCM,Supply Chain Management,サプライ　チェイン　マニッジメントゥ,受発注や在庫、販売、物流などの情報を共有し、流通の全体最適化を図る管理手法,1
-SCSI,Small Computer System Interface ,［US］スモル　［US］コムピュータァ　スィスタム　インタフェイス,周辺機器とのパラレル接続規格,1
+SCSI,Small Computer System Interface ,［US］スモル　［US］コムピュータァ　スィスタム　インタフェイス,周辺機器とのパラレル接続規格,0
 SEO,Search Engine Optimization,サーチ　エンジン　オプタマゼイショ,検索結果リストの上位に表示させるために様々な工夫を行うこと,1
 SFA,Sales Force Automation,セイル　［US］フォァス　［US］オタメイション,営業活動を支援して効率化するもの,1
 SIM,Subscriber Identity Module,サブスクライバ（ァ）　アイデンティーティ　［US］モジュール,識別情報などが記録されたICカード,1
@@ -116,7 +116,7 @@ SPEC,Standard Performance Evaluation Corporation,スタンダードゥ　［US�
 SQL,Structured Query Language,ストゥラクチャドゥ　クイアリィ　ラングウェジ,リレーショナルデータベースの管理や操作を行うための問い合わせ言語,1
 SQuBOK,Software Quality Body Of Knowledge ,［US］ソフトゥウェァ　［US］クウォラティ　バディー　オブ　ナレッジ　,ソフトウェアに関する品質保証や品質向上に携わる技術者に求められる知識を体系的にまとめた知識体系,1
 SSD,Solid State Drive,［US］サリドゥ　ステイトゥ　ドゥライヴ,フラッシュメモリを用いる外部記憶装置,1
-SSID,Service Set Identifier,サーヴィス　セトゥ　アイデンティファイア（ァ）,無線LAN（Wi-Fi）におけるアクセスポイントの識別名。現在ではESSIDの意味でSSIDという語を使う場合が多い,1
+SSID,Service Set Identifier,サーヴィス　セトゥ　アイデンティファイア（ァ）,無線LAN（Wi-Fi）におけるアクセスポイントの識別名。現在ではESSIDの意味でSSIDという語を使う場合が多い,0
 SSL,Secure Socket Layer,［US］スィキュァ　［US］サキトゥ　レイア（ァ）,IPネットワークでデータを暗号化して送受信するプロトコル,1
 SWOT分析,Strengths Weaknesses Opportunities Threats analysis ,ストレングス　ウィークネス　オポチュニティ　スレトゥ　アナリシス　,強み、弱み、機会、脅威の4項目を軸に外部環境と内部環境の把握・分析すること,1
 TCO,Total Cost of Ownership,トータル　［US］コストゥ　オブ　オーナーシプ,総所有コスト / 総保有コスト,1

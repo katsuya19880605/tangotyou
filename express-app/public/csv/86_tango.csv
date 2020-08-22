@@ -29,11 +29,11 @@ DRM,Digital Rights Management,ディズィトゥ　ライトゥ　マネジメ�
 EA,Enterprise Architecture ,エンタープライズ　［US］アーカテクチャァ　,組織運営の基本理念,1
 EC,Electronic Commerce ,［US］イレクトゥラニク　［US］カマース　,電子商取引,1
 ECC,Error Check and Correct ,エラ（ァ）　チェク　アンド　コレクトゥ,誤り訂正符号,1
-E-R図,Entity Relationship Diagram,エンティーティ　リレイションシプ　ダイアグラム,実体関連図。実体（entity）、関連（relationship）、属性（attribute）の三要素で構成された図,1
+E-R図,Entity Relationship Diagram,エンティーティ　リレイションシプ　ダイアグラム,実体関連図。実体（entity）、関連（relationship）、属性（attribute）の三要素で構成された図,0
 ERP,Enterprise Resource Planning,エンタープライズ　［US］リーソース　プランニング,企業の持つ資金や人材、設備、資材、情報など様々な資源を統合的に管理・配分し、業務の効率化や経営の全体最適を目指す手法,1
 EVM,Earned Value Management ,アーンド　バリュー　マネジメント,アーンドバリュー分析。進捗状況の把握・管理をEV（Earned Value：アーンドバリュー、出来高）という概念で把握する,1
 FIFO,First In First Out,ファーストゥ　イ　ファーストゥ　アウト,先入先出,1
-FTP,File Transfer Protocol,ファイル　トゥランスファァ　［US］プロウタコル,TCP/IPネットワークでファイル転送を行うことができるプロトコル,1
+FTP,File Transfer Protocol,ファイル　トゥランスファァ　［US］プロウタコル,TCP/IPネットワークでファイル転送を行うことができるプロトコル,0
 FTTH,Fiber To The Home,ファイバ（ァ）　トゥ　ザ　ホーム,光ファイバーによる家庭向けのデータ通信サービス,1
 GPS,Global Positioning System,［US］グロウバル　ポズィショニン　スィスタム,人工衛星を利用して自分が地球上のどこにいるのかを正確に割り出すシステム,1
 HaaS,Hardware as a Service ,［US］ハードゥウェァ　アズ　レベル】1　サーヴィス,ハードウエア利用提供サービス,1
@@ -41,7 +41,7 @@ HDMI,High-Definition Multimedia Interface,ハイ　デフィニション　マ�
 HRM,Human Resource Management ,［US］ヒュマン　［US］リーソース　マニッジメントゥ,人的資源管理,1
 HTML,HyperText Markup Language,ハイパテクストゥ　マーカ　ラングウェジ,Webページを記述するためのマークアップ言語,1
 HTTP,Hyper Text Transfer Protocol,ハイパ（ァ）　テキストゥ　トゥランスファァ　［US］プロウタコル,WebサーバとWebクライアントの間でデータの送受信を行うために用いられるプロトコル,1
-IDS,Intrusion Detection System ,イントルージョン　ディテクション　スィスタム,侵入検知システム。不正なアクセスを検知して管理者にメールなどで通報するシステム,1
+IDS,Intrusion Detection System ,イントルージョン　ディテクション　スィスタム,侵入検知システム。不正なアクセスを検知して管理者にメールなどで通報するシステム,0
 IEEE,Institute of Electrical and Electronic Engineers,インスチチュートゥ　オ　イレクトリカル　アンド　［US］イレクトゥラニク　エンジニア,工業技術の標準化団体,1
 IMAP,Internet Message Access Protocol,［US］インタネトゥ　メセジ　アクセス　［US］プロウタコル,電子メールを受信するためのプロトコル,1
 IoT,Internet of Things,［US］インタネトゥ　オブ　シングス,様々な物体に通信機能を持たせ、インターネットに接続したり自動認識や自動制御、遠隔計測などを行うこと,1
@@ -50,7 +50,7 @@ IPS,Intrusion Prevention System ,イントルージョン　プリヴェンシ�
 IPv6,Internet Protocol version6,［US］インタネトゥ　［US］プロウタコル　バージョン６,インターネットの基礎となる通信規約プロトコル。枯渇が近いIPv4と比べて利用できるアドレス総数が多く事実上無限にあり、セキュリティ機能の強化や転送効率の向上などがなされている,1
 IrDA,Infrared Data Association ,インフラレドゥ　デイタ　アソウスィエイション,赤外線通信規格,1
 ISMS,Information Security Management System,インファメイション　［US］スィキュ（ー）リティ　マニッジメントゥ　スィスタム,組織内での情報の取り扱いについて、機密性、完全性、可用性を一定の水準で確保するための仕組み,1
-ISO,International Organization for Standardization,インターナショナル　オーガナイゼイション　［US］ファァ　スタンダァダゼイショ,国際標準化機構,1
+ISO,International Organization for Standardization,インターナショナル　オーガナイゼイション　［US］ファァ　スタンダァダゼイショ,国際標準化機構,0
 ISP,Internet Service Provider,［US］インタネトゥ　サーヴィス　プラヴァイダ（ァ）,インターネットサービスプロバイダ,1
 ITIL,Information Technology Infrastructure Library,インファメイション　テクノロジィ　インフラストラクチャ（ァ）　ライブラリィ,情報システムの運用・管理業務についての体系的なガイドラインの一つ,1
 ITS,Intelligent Transport Systems ,インテリジェントゥ　トゥランスポートゥ　システムズ,高度道路交通システム,0
@@ -80,7 +80,7 @@ OSS,Open Source Software,アウプン　ソース　［US］ソフトゥウェ�
 PCM,Pulse Code Modulation,パルス　コードゥ　［US］モジュレイション,音声などのアナログ信号をデジタルデータに変換する方式の一つ,1
 PDCA,Plan Do Check Act,プラン　ドゥー　チェク　アクトゥ,計画（Plan）→実行（Do）→評価（Check）→改善（Act）という4段階の活動を繰り返し行なうことで、継続的にプロセスを改善・最適化していく手法,1
 PDM,Product Data Management ,プロダクトゥ　デイタ　マニッジメントゥ,設計や構成に関する情報を一元管理してコスト削減や工期の短縮を図る手法,1
-PER,Price Earnings Ratio ,プライス　アーニングズ　レイシオ,株価収益率,1
+PER,Price Earnings Ratio ,プライス　アーニングズ　レイシオ,株価収益率,0
 PERT,Program Evaluation and Review Technique,プロウグラム　エヴァリュエーション　アンド　リヴュー　テクニーク　,各工程の依存関係を図示して所要期間を見積もったり、重要な工程を見極めたりする手法,1
 PKI,Public Key Infrastructure,パブリク　［US］キィ　インフラストラクチャ（ァ）,公開鍵基盤,1
 PL法,Product Liability,プロダクトゥ　ライアビリティ　,製造物責任法,1
@@ -112,14 +112,14 @@ S/MIME,Secure MIME,［US］スィキュァ　マイム　,電子メールの内�
 SMTP,Simple Mail Transfer Protocol,スィムポゥ　メイル　トゥランスファァ　［US］プロウタコル,電子メールを伝送するための通信手順プロトコル,1
 SNS,Social Networking Service,ソーシャル　ネットゥワーキング　サーヴィス,ソーシャルネットワーキングサービス,1
 SOA,Service Oriented Architecture,サーヴィス　オリエンティド　アーキテクチャ,部品化されたサービスを結合してシステムを構築する設計手法,1
-SPEC,Standard Performance Evaluation Corporation,スタンダードゥ　［US］パァフォァマンス　エヴァリュエーション　コーポレイション,コンピュータシステムの性能測定する標準的な手法を策定し、測定結果を登録・公表する国際的な非営利団体,1
+SPEC,Standard Performance Evaluation Corporation,スタンダードゥ　［US］パァフォァマンス　エヴァリュエーション　コーポレイション,コンピュータシステムの性能測定する標準的な手法を策定し、測定結果を登録・公表する国際的な非営利団体,0
 SQL,Structured Query Language,ストゥラクチャドゥ　クイアリィ　ラングウェジ,リレーショナルデータベースの管理や操作を行うための問い合わせ言語,1
 SQuBOK,Software Quality Body Of Knowledge ,［US］ソフトゥウェァ　［US］クウォラティ　バディー　オブ　ナレッジ　,ソフトウェアに関する品質保証や品質向上に携わる技術者に求められる知識を体系的にまとめた知識体系,1
-SSD,Solid State Drive,［US］サリドゥ　ステイトゥ　ドゥライヴ,フラッシュメモリを用いる外部記憶装置,1
+SSD,Solid State Drive,［US］サリドゥ　ステイトゥ　ドゥライヴ,フラッシュメモリを用いる外部記憶装置,0
 SSID,Service Set Identifier,サーヴィス　セトゥ　アイデンティファイア（ァ）,無線LAN（Wi-Fi）におけるアクセスポイントの識別名。現在ではESSIDの意味でSSIDという語を使う場合が多い,1
 SSL,Secure Socket Layer,［US］スィキュァ　［US］サキトゥ　レイア（ァ）,IPネットワークでデータを暗号化して送受信するプロトコル,1
 SWOT分析,Strengths Weaknesses Opportunities Threats analysis ,ストレングス　ウィークネス　オポチュニティ　スレトゥ　アナリシス　,強み、弱み、機会、脅威の4項目を軸に外部環境と内部環境の把握・分析すること,1
-TCO,Total Cost of Ownership,トータル　［US］コストゥ　オブ　オーナーシプ,総所有コスト / 総保有コスト,1
+TCO,Total Cost of Ownership,トータル　［US］コストゥ　オブ　オーナーシプ,総所有コスト / 総保有コスト,0
 TCP,Transmission Control Protocol,［US］トゥランスミッション　コントゥロウル　［US］プロウタコル,ポート番号で上位層のアプリを判別し、通信相手の状況を確認して接続を確立する信頼性の高いコネクション型のプロトコル,1
 TELNET,TELetype NETwork,テレタイプ　ネットワーク　,TCP/IPネットワークを通じて別のコンピュータにアクセスし、遠隔操作するためのプロトコル,1
 TOB,TakeOver Bid,テークオーヴァ（ァ）　ビドゥ　,上場企業の株式を、買い取り条件を公表して不特定多数の株主から株式市場外で買い付けること,1
@@ -128,7 +128,7 @@ UML,Unified Modeling Language,ユーニファイドゥ　［US］マデリング
 UPS,Uninterruptible Power Supply,アンインターラプタブル　パワー　サプライ,無停電電源装置,1
 URL,Uniform Resource Locator,ユーニフォーム　［US］リーソース　ロウケイタ（ァ）,インターネット上に存在するデータやサービスなどの情報資源の位置を記述する標準的な記法,1
 USB,Universal Serial Bus,［US］ユニヴァーサル　スィ（ア）リアル　バス,コンピュータと周辺機器を繋ぐのに用いられるデータ伝送路の標準規格,1
-UTM,Unified Threat Management ,ユーニファイドゥ　スレトゥ　マニッジメントゥ,統合脅威管理,1
+UTM,Unified Threat Management ,ユーニファイドゥ　スレトゥ　マニッジメントゥ,統合脅威管理,0
 VICS,Vehicle Information and Communication System,ヴィーイクル　インファメイション　アンド　コミューニケイション　システム　,渋滞や交通規制などの道路交通情報を、FM多重放送やビーコンを使ってリアルタイムにカーナビに届けるシステム,1
 VoIP,Voice over Internet Protocol,ヴォイス　オーヴァ（ァ）　［US］インタネトゥ　［US］プロウタコル,TCP/IPネットワークを通じて音声通話を行う技術の総称,1
 VPN,Virtual Private Network,ヴァーチュアル　プライヴィトゥ　ネットワーク,仮想プライベートネットワーク,1
