@@ -439,9 +439,7 @@
                         let row = rowvals.join(",");
                         Org_Data += row;
                     });
-                
-                   
-
+                    //js側にポストする内容
                     document.getElementById("fname_cnt").value=fname_cnt;
                     document.getElementById("now_cnt").value=now_cnt;
                     document.getElementById("quantity").value=quantity;
@@ -450,21 +448,14 @@
                     document.post.submit();
 
                 }else{
-
                     disparea.textContent = array[cnt][flg];
                     disparea.classList.add('disparea');
                     pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
-                    console.log('cnt1='+cnt);
-
                 };
-            
             }else{
-                
                 disparea.textContent = array[cnt][flg];
                 disparea.classList.add('disparea');
                 pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
-                console.log('cnt1='+cnt);
-
             };
             
         } else {
@@ -492,10 +483,8 @@
                 $('#sts').prop('disabled', true);//チェックボックス無効化
             };
             
-        
             cnt++;
             sts_flg=1;
-            console.log('cnt2='+cnt);
         }
         disabled_release.disabled = false;      //backボタンの有効化
     };

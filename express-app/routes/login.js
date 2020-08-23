@@ -4,13 +4,13 @@ var mysql =require('mysql');  //追加
 
 
 //MySQLの設定情報 MAMP用
-var mysql_setting = {
-    host : 'localhost',
-    user : 'tangouser',
-    password : 'tangopw',
-    port : 3306,
-    database: 'tango'
-};
+// var mysql_setting = {
+//     host : 'localhost',
+//     user : 'tangouser',
+//     password : 'tangopw',
+//     port : 3306,
+//     database: 'tango'
+// };
 
 // var mysql_setting = {
 //     host : 'us-cdbr-east-02.cleardb.com',
@@ -21,12 +21,12 @@ var mysql_setting = {
 // };
 
 //HEROKU用
-// var mysql_setting = {
-//     host : 'us-cdbr-east-02.cleardb.com',
-//     user: "bc6ad563b3e02b",
-//     password: "cd98ab61",
-//     database: "heroku_568920a38321ad7"
-// };
+var mysql_setting = {
+    host : 'us-cdbr-east-02.cleardb.com',
+    user: "bc6ad563b3e02b",
+    password: "cd98ab61",
+    database: "heroku_568920a38321ad7"
+};
 
 
 
