@@ -7,6 +7,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <link rel="stylesheet" href="/stylesheets/edit.css" />
     <script src="javascripts/jquery.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark px-0">
 
-                    <a class="navbar-brand" href="#">単語帳</a>
+                    <a class="navbar-brand" href="#"></a>
                     <!-- <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -40,69 +41,74 @@
         </div>
     </header>
 
-    <!-- アップロード成功 -->
-    <p id="UPend"><%= msg %></p>
+    <div class="btn-area">
+        <!-- アップロード成功 -->
+        <p id="UPend"><%= msg %></p>
 
-    <div class="up-btn">
-        <!-- <h1>お問い合わせ</h1> -->
-        <a id="modalOpen" class="modalOpen">UPLOAD</a>
+        <div class="up-btn">
+            <!-- <h1>お問い合わせ</h1> -->
+            <a id="modalOpen" class="modalOpen">UPLOAD</a>
 
-        <!-- モーダル画面 -->
-        <div class="modal" id="modal">
-            <!-- <h2>アップロード</h2> -->
-            <div class="modalContests">
+            <!-- モーダル画面 -->
+            <div class="modal" id="modal">
+                <!-- <h2>アップロード</h2> -->
+                <div class="modalContests">
 
-                <!-- ファイル選択 -->
-                <div id="input-group">
-                    <input type="file" id="file" accept="text/csv">
-                    <label for="file" id="input-label">ファイルを選択</label>
-                </div>
+                    <!-- ファイル選択 -->
+                    <div id="input-group">
+                        <input type="file" id="file" accept="text/csv">
+                        <label for="file" id="input-label">ファイルを選択</label>
+                    </div>
 
-                <!-- 保存ボタンが押された際に、saveCsv()の処理で
+                    <!-- 保存ボタンが押された際に、saveCsv()の処理で
                         valueに編集データが入りdelete.jsにPOSTする -->
-                <button id="UPdata" onclick="upCsv();">アップロード</button>
-                <span id="type-error"></span>
+                    <button id="UPdata" onclick="upCsv();">アップロード</button>
+                    <span id="type-error"></span>
 
 
+                </div>
+                <div class="m-close">
+                    <a id="modalClose" class="modalClose">×</a>
+                </div>
             </div>
-            <div class="m-close">
-                <a id="modalClose" class="modalClose">×</a>
-            </div>
+            <div class="mask" id="mask"></div>
         </div>
-        <div class="mask" id="mask"></div>
-    </div>
 
-    <!-- 一致するファイル名を表示 -->
-    <select id="sources" class="custom-select sources" placeholder="EDIT">
-        <% for(let i in file){ %>
-        <option value="<%= file[i]%>"><%= fileName[i]%></option>
-        <%}%>
-            </select>
+
+        <!-- 一致するファイル名を表示 -->
+        <select id="sources" class="custom-select sources" placeholder="EDIT">
+            <% for(let i in file){ %>
+            <option value="<%= file[i]%>"><%= fileName[i]%></option>
+            <%}%>
+        </select>
 
             <!-- 保存ボタンが押されたvalueに編集データが入りPOSTする -->
-                <button id="save" onclick="saveCsv();">SAVE</button>
-                <form method="POST" name="post">
-                    <input id="name" type="hidden" name="name" value="">
-                    <input id="data" type="hidden" name="data" value="">
-                </form>
-
-                <!-- テーブル表示：convertCSVtoArray()でタグの中にテーブル要素が入る -->
-                <div class="table_box">
-                    <table id="T_lavel" >
-                        <tr>
-                            <th class="a">略 語</th>
-                            <th class="b">フルスペル</th>
-                            <th class="c">カタカナ</th>
-                            <th class="d">意 味</th>
-                            <th class="e">フラグ</th>
-                    </tr>
-                    </table>
-                    <table id="T_data" ></table>
-                    <div class="newrow">
-                        <button id="row" onclick="newRow();">スペースを追加</button> 
-                    </div>
-                </div>
+        <button id="save" onclick="saveCsv();">SAVE</button>
+        <form method="POST" name="post">
+            <input id="name" type="hidden" name="name" value="">
+            <input id="data" type="hidden" name="data" value="">
+        </form>
+    </div>
+    <!-- テーブル表示：convertCSVtoArray()でタグの中にテーブル要素が入る -->
+    <div class="table_box">
+        <table id="T_lavel" >
+            <tr>
+                <th class="a">略 語</th>
+                <th class="b">フルスペル</th>
+                <th class="c">カタカナ</th>
+                <th class="d">意 味</th>
+                <th class="e">フラグ</th>
+        </tr>
+        </table>
+        <table id="T_data" ></table>
+        <div class="newrow">
+            <button id="row" onclick="newRow();">スペースを追加</button> 
+        </div>
+    </div>
   
+    <!-- <div class="b_point">
+        <a href="personal">BACK</a>
+    </div> -->
  
 </body>
 
@@ -386,8 +392,7 @@
         let NewTd = ''; //初期化
         //配列に改行コードを追加して、文字列として連結する
         NewTd = newTd_element.join('\n');
-        
-        console.log(NewTd);
+
         //inputタグのvalueに取得した表のデータとファイル名を入れる
         document.getElementById("name").value = fileName;
         document.getElementById("data").value = NewTd;

@@ -107,37 +107,11 @@ header a {
 /* テーブル */
 
 .table_box {
-	margin-top: 300px;
+	margin-top: 180px;
 	/* margin-left: 30px; */
 	font-size: 15px;
 	color: black;
 	text-align: center;
-}
-
-.newrow {
-	margin: 30px;
-	text-align: left;
-}
-
-.newrow button{
-	text-align: center;
-	display: inline-block;
-	padding: 15px;
-	/* line-height: 0.5em; */
-	border-radius: 4px;
-	font-size: 16px;
-	background-color: deepskyblue;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-	border: none;
-	cursor: pointer;
-	align-items: center;
-	color: #ffffff;
-}
-
-.newrow button:hover {
-	transition: .5s;
-	background: dodgerblue;
-	color: #ffffff;
 }
 
 table {
@@ -232,8 +206,8 @@ label.changed::after {
 
 .custom-select-wrapper {
 	position: absolute;
-	top: 80px;
-	left: 30px;
+	top: 40px;
+	left: 15px;
 	display: inline-block;
 	user-select: none;
 }
@@ -376,8 +350,8 @@ label.changed::after {
 
 .up-btn {
 	position: absolute;
-	top: 80px;
-	left: 85%;
+	top: 40px;
+	right: 15px;
 	text-align: center;
 	display: inline-block;
 	text-decoration: none;
@@ -499,9 +473,9 @@ label.changed::after {
 }
 
 #UPend {
-	position: relative;
-	top: 3px;
-	left: 76%;
+	position: absolute;
+	top: 10px;
+	right: 0;
 	display: inline-block;
 	border-radius: 5px;
 	color: red;
@@ -513,7 +487,7 @@ label.changed::after {
 
 #save {
 	position: absolute;
-	top: 80px;
+	top: 40px;
 	left: 300px;
 	height: 60px;
 	display: inline-block;
@@ -530,6 +504,58 @@ label.changed::after {
 }
 
 #save:hover {
+	transition: .5s;
+	background: dodgerblue;
+	color: #ffffff;
+}
+
+.navbar-brand {
+    background: url("../images/logo2.png") no-repeat left center;
+    background-size: contain;
+    height: 50px;
+    width: 215px;
+}
+
+.nav-link{
+	color: white;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+.btn-area{
+	max-width:1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.newrow {
+	max-width:1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.newrow button{
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	text-align: center;
+	display: inline-block;
+	padding: 15px;
+	margin: 30px 0;
+	/* line-height: 0.5em; */
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: deepskyblue;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+	border: none;
+	cursor: pointer;
+	align-items: center;
+	color: #ffffff;
+}
+
+.newrow button:hover {
 	transition: .5s;
 	background: dodgerblue;
 	color: #ffffff;

@@ -410,8 +410,9 @@
         }
         /*終了時の処理　ここまで*/
 
-
+        console.log("flg"+flg);
         flg = flg ^ 1;  //フラグのスイッチXOR
+
         if (flg == 0) {
 
 
@@ -446,15 +447,25 @@
                     document.getElementById("quantity").value=quantity;
                     document.getElementById("S_Data").value=Sct_Data;
                     document.getElementById("O_Data").value=Org_Data;
-                   
                     document.post.submit();
-                };
-            };
 
-            disparea.textContent = array[cnt][flg];
-            disparea.classList.add('disparea');
-            pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
-            console.log("保存中.......");
+                }else{
+
+                    disparea.textContent = array[cnt][flg];
+                    disparea.classList.add('disparea');
+                    pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
+                    console.log('cnt1='+cnt);
+
+                };
+            
+            }else{
+                
+                disparea.textContent = array[cnt][flg];
+                disparea.classList.add('disparea');
+                pcnt.innerText = cnt + 1 + '問目／' + quantity + '問';
+                console.log('cnt1='+cnt);
+
+            };
             
         } else {
 
@@ -484,6 +495,7 @@
         
             cnt++;
             sts_flg=1;
+            console.log('cnt2='+cnt);
         }
         disabled_release.disabled = false;      //backボタンの有効化
     };

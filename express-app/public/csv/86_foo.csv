@@ -39,7 +39,7 @@ GPS,Global Positioning System,［US］グロウバル　ポズィショニン　
 HaaS,Hardware as a Service ,［US］ハードゥウェァ　アズ　レベル】1　サーヴィス,ハードウエア利用提供サービス,1
 HDMI,High-Definition Multimedia Interface,ハイ　デフィニション　マルティーミーディア　インターフェース,映像や音声をデジタル信号として伝送するインターフェース規格の一つ。直接デジタルデータとして伝送するため、伝送途上で品質が劣化することがない,1
 HRM,Human Resource Management ,［US］ヒュマン　［US］リーソース　マニッジメントゥ,人的資源管理,1
-HTML,HyperText Markup Language,ハイパテクストゥ　マーカ　ラングウェジ,Webページを記述するためのマークアップ言語,1
+HTML,HyperText Markup Language,ハイパテクストゥ　マーカ　ラングウェジ,Webページを記述するためのマークアップ言語,0
 HTTP,Hyper Text Transfer Protocol,ハイパ（ァ）　テキストゥ　トゥランスファァ　［US］プロウタコル,WebサーバとWebクライアントの間でデータの送受信を行うために用いられるプロトコル,0
 IDS,Intrusion Detection System ,イントルージョン　ディテクション　スィスタム,侵入検知システム。不正なアクセスを検知して管理者にメールなどで通報するシステム,1
 IEEE,Institute of Electrical and Electronic Engineers,インスチチュートゥ　オ　イレクトリカル　アンド　［US］イレクトゥラニク　エンジニア,工業技術の標準化団体,1
@@ -68,7 +68,7 @@ MOT,Management Of Technology,マニッジメントゥ　オブ　テクノロジ
 MP3,MPEG Audio Layer 3,MPEG　オーディオ　レイヤー　3,音声データを圧縮する方式およびファイル形式の一つ,1
 MRP,Material Requirements Planning,マティアリアル　リクワイアメンツ　プランニング,生産計画に基いて部品表と在庫情報から発注すべき資材の量と時期を決定する方式,0
 MTBF,Mean Time Between Failures,ミーン　タイム　ビトイーン　［US］フェイリャァズ,平均故障間隔,1
-MTTR,Mean Time To Repair,ミーン　タイム　トゥ　［US］リペァ,平均復旧時間,1
+MTTR,Mean Time To Repair,ミーン　タイム　トゥ　［US］リペァ,平均復旧時間,0
 MVNO,Mobile Virtual Network Operator,《名》モウビール　ヴァーチュアル　ネットワーク　［US］アパレイタァ,仮想移動体通信事業者,1
 NAS,Network Attached Storage,ネットワーク　アタッチトゥ　［US］ストリジ,ネットワークに直接接続し、コンピュータなどからネットワークを通じてアクセスできる外部記憶装置,1
 NAT,Network Address Translation,ネットワーク　アドゥレス　［US］トゥランスレイション,ネットワークアドレス変換,1
